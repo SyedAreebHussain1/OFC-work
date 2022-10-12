@@ -23,7 +23,8 @@ const LoginForm = (props) => {
         password: password,
         deviceTokan: deviceTokan,
       })
-      navigate('/home', { state: { email: email, password: password } });
+      navigate('/home');
+      // , { state: { email: email, password: password } }
     }
   };
   // useEffect(() => {

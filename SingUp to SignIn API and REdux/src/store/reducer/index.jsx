@@ -1,6 +1,8 @@
 const INITIAL_STATE = {
   users: null,
-  signUp: null
+  signUp: null,
+  profile:null
+  
 };
 export default (state = INITIAL_STATE, action) => {
   // console.log("action=>", action);
@@ -15,6 +17,11 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         users: action.payload
       }
+      case "SETPROFILE":
+        return{
+          ...state,
+          profile: action.payload
+        }
   }
   return state;
 };

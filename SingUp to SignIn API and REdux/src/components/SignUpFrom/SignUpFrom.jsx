@@ -45,7 +45,7 @@ const SignUp = (props) => {
 
   useEffect(() => {
     if (props.signUp) {
-      navigate("/login");
+      navigate("/login", { state: { firstName: firstName, lastName: lastName, email: email, cnic: cnic, whatsapp_no: whatsapp_no, gender: gender } });
     }
   }, [props.signUp]);
 

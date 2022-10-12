@@ -35,10 +35,27 @@ const logInFun = (data) => {
         })
     };
   };
-  export {signInFormAction, logInFun }
+  
+  const ProfileUser = (data) => {
+    let token = localStorage.getItem("token")
+    return (dispatch) => {
+      console.log("data=>", data);
+      fetch("https://backend.squarepro.net/v1/profile", {
+        method: "GET",  
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `bearer ${token}`
+        },
 
+      })
+        .then((response) => response.json())  
+        // .then((json) => dispatch(json))
+        .then((json) => dispatch({ type: "SETPROFILE", payload: json}));
 
-
+    };
+    }
+    
+    export {signInFormAction, logInFun,ProfileUser }
 
 
 
