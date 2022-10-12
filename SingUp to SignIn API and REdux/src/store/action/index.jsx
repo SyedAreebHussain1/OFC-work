@@ -29,7 +29,10 @@ const logInFun = (data) => {
         // Displaying results to console
         // .then((json) => dispatch({ type: "SETDATA", payload: json.response[0].token}));
         // .then((json) => console.log(json));
-        .then((json) => dispatch({ type: "SETDATA", payload: json }))
+        .then((json) =>{ 
+          localStorage.setItem("token",json.data.token)
+          dispatch({ type: "SETDATA", payload: json })
+        })
     };
   };
   export {signInFormAction, logInFun }

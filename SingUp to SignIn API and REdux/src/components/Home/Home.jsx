@@ -5,16 +5,18 @@ const Home = (props) => {
     console.log("propsHOME=>>", props);
     const location = useLocation();
     // const navigate = useNavigate();
-    console.log(location.state);
+    let token = localStorage.getItem("token") 
+    console.log(token);
     // useEffect(() => {
-    //     if (!props.users) {
-    //         navigate("/");
+    //     if (token == null) {
+    //         navigate("/login");
     //     }
-    // }, [props.users]);
+    // }, []);
     return (
         <div>
-            <h1>Home Page</h1>
-            <p>token: {props.users.data.token}</p>
+            <h1>Profile Page</h1>
+            {/* <p>token: {props.users.data.token}</p> */}
+            <p>token: {token}</p>
             <p>{location.state.email}</p>
         </div>
     );
