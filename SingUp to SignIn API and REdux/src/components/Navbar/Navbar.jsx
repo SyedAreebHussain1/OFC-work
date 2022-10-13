@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import store from "../../store"
 
 function BasicExample() {
     const setSign = () => {
@@ -9,7 +10,9 @@ function BasicExample() {
         window.location.replace('http://localhost:3000/')
     }
     let setLogOut = () => {
-        window.location.replace('http://localhost:3000/login')
+        // window.location.replace('http://localhost:3000/login')
+        localStorage.clear()
+        store.dispatch({type:"SETDATA",payload:null})
     }
     return (
         <Navbar bg="light" expand="lg">

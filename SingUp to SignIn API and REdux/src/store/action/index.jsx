@@ -8,7 +8,6 @@ return(dispatch) =>
           "Content-type": "application/json; charset=UTF-8",
         },
       })
-        // .then((response) => response.json())
         .then((response) => response.json())
         // .then((json)=>console.log('json',json))  
         .then((json) => dispatch({ type: "SETSIGNUP", payload: json.data }));
@@ -150,4 +149,3 @@ const logInFun = (data) => {
     //   };
     // };
     // export { logInFun };
-

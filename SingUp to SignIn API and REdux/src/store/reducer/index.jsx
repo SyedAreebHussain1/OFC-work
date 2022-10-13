@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  users: null,
+  users: localStorage.getItem("token"),
   signUp: null,
   profile:null
   
