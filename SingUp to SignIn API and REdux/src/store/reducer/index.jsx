@@ -1,27 +1,26 @@
 const INITIAL_STATE = {
-  users: localStorage.getItem("token"),
-  signUp: null,
+  signup: null,
+  login: null,
   profile:null
-  
 };
 export default (state = INITIAL_STATE, action) => {
-  // console.log("action=>", action);
+  console.log("action=>", action);
   switch (action.type) {
-    case "SETSIGNUP":
+    case "SIGNUP":
       return {
         ...state,
-        signUp: action.payload
+        signup: action.payload
       };
-    case "SETDATA":
+    case "LOGIN":
       return {
         ...state,
-        users: action.payload
+        login: action.payload
       }
-      case "SETPROFILE":
-        return{
-          ...state,
-          profile: action.payload
-        }
+    case "PROFILE":
+      return {
+        ...state,
+        profile: action.payload
+      }
   }
   return state;
-};
+}
