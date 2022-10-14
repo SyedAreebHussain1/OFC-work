@@ -1,0 +1,16 @@
+ul {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    list-style: none;
+
+}
+/* .Navbar{
+    border: 2px solid black;
+} */
+.active{
+    color: red;
+}
+Link{
+    text-decoration: none;
+}
