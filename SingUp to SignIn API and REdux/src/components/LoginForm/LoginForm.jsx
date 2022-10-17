@@ -26,11 +26,6 @@ function LoginForm(props) {
                 deviceTokan: deviceTokan
             })
         }
-        //  else if (props.login == null) {
-        //     alert('Bad Request')
-        //     setEmail('')
-        //     setPassword('')
-        // }
     }
     useEffect(() => {
         // console.log(props.login?.statusCode);
@@ -74,12 +69,14 @@ function LoginForm(props) {
                             autoComplete="off"
                             placeholder="Password"
                         />
+                            <Link to='/forgetpassword'> Forget Password</Link>
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Login
                     </Button>
                     &nbsp;&nbsp;
-                    <Link to='/'>Create new account</Link>
+                    <Link to='/'>Create new account</Link> <br />
+                    <Form.Text className="text-muted">Our verification team vets all requests thoroughly and bases their review on a number of inputs to determine whether an account is eligible to be verified.</Form.Text>
                 </Form>
             </div>
         </div>

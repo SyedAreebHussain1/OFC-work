@@ -2,7 +2,8 @@ const INITIAL_STATE = {
   signup: null,
   login: null,
   profile: null,
-  verify: null
+  verify: null,
+  forgetpass: null
 };
 export default (state = INITIAL_STATE, action) => {
   console.log("action=>", action);
@@ -26,6 +27,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         verify: action.payload
+      }
+    case "FORGETPASSWORD":
+      return {
+        ...state,
+        forgetpass: action.payload
       }
   }
   return state;

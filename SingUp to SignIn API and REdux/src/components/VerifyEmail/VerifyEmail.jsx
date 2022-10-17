@@ -18,9 +18,6 @@ const Verify = (props) => {
             props.verification({
                 code: verifyCode
             })
-        } else if (props.verify == null) {
-            alert('Bad Request')
-            setVerifyCode('')
         }
     }
     useEffect(() => {
@@ -41,16 +38,16 @@ const Verify = (props) => {
             marginTop: "100px",
             marginLeft: "250px",
         }}>
-            <h2>Verification</h2>
+            <h2>Enter Verification Code</h2>
             <Form>
                 <Form.Group className="mb-3">
-                    <Form.Label>Enter verification code</Form.Label>
+                    <Form.Label>Enter code</Form.Label>
                     <Form.Control type="text" name='code' onChange={(text) => setVerifyCode(text.target.value)} placeholder="Enter verification code" />
                     <Form.Text className="text-muted">
                         Our verification team vets all requests thoroughly and bases their review on a number of inputs to determine whether an account is eligible to be verified.                    </Form.Text>
                 </Form.Group>
                 <Button variant="outline-success" onClick={verifying}>
-                    Verify
+                    Submit
                 </Button>
             </Form>
         </div>

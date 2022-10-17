@@ -71,7 +71,22 @@ const verification = (data) => {
   };
 }
 
-// verification()
+const forgetPassAction = (data) => {
+  return (dispatch) => {
+    console.log("data=>", data);
+    fetch("https://backend.squarepro.net/v1/auth/forgot-password", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+
+    })
+      .then((response) => response.json())
+      // .then((json) => console.log('forgetpass=.', json))
+    .then((json) => dispatch({ type: "FORGETPASSWORD", payload: json }));
+  };
+}
 
 
-export { signUpAction, logInFun, profileUser, verification };
+export { signUpAction, logInFun, profileUser, verification, forgetPassAction };
