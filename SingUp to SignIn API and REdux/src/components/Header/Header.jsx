@@ -5,25 +5,24 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import store from "../../store"
 
 
 const Header = () => {
     const navigate = useNavigate()
+
+    const logOut = () => {
+        navigate('/login')
+        localStorage.clear()
+        store.dispatch({ type: "LOGIN", payload: null })
+    }
+    const createNewAccount = () => {
+        navigate('/')
+        localStorage.clear()
+        store.dispatch({ type: "SIGNUP", payload: null })
+    }
     return (
         <div className="Navbar">
-            {/* <h1>React Router v6</h1> */}
-            {/* <ul>
-                <li><Link to='/home'>Home</Link></li>
-                <li><Link to='/about'>About</Link></li>
-                <li><Link to='/contact'>Contact</Link></li>
-                <li><Link to='/login'>Login</Link></li>
-
-                </ul> */}
-            {/* NavLink color change kar karta ha link ka jis NavLink pe hum click karty ha usko */}
-            {/* <li><NavLink to='/'>Home</NavLink></li>
-                <li><NavLink to='/about'>About</NavLink></li>
-                <li><NavLink to='/contact'>Contact</NavLink></li> */}
-
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand>ES6</Navbar.Brand>
@@ -39,11 +38,11 @@ const Header = () => {
                                 </NavDropdown.Item>
                                 {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
-                                    <Link to='/'>Create new account</Link>
+                                <NavDropdown.Item href="#action/3.4" onClick={createNewAccount}>
+                                    Create new account
                                 </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <Link to='/login'>Log Out</Link>
+                                <NavDropdown.Item onClick={logOut}>
+                                    Log out
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>

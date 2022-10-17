@@ -39,19 +39,39 @@ const profileUser = (data) => {
   return (dispatch) => {
     console.log("data=>", data);
     fetch("https://backend.squarepro.net/v1/profile", {
-      method: "GET",  
+      method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
         Authorization: `bearer ${token}`
       },
 
     })
-      .then((response) => response.json())  
+      .then((response) => response.json())
       // .then((json) => dispatch(json))
-      .then((json) => dispatch({ type: "PROFILE", payload: json}));
+      .then((json) => dispatch({ type: "PROFILE", payload: json }));
 
   };
-  }
+}
 
 
-export { signUpAction, logInFun ,profileUser};
+const verification = (data) => {
+  return (dispatch) => {
+    console.log("data=>", data);
+    fetch("https://backend.squarepro.net/v1/auth/account-code-verify", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+
+    })
+      .then((response) => response.json())
+      // .then((json) => console.log('verify',json))
+      .then((json) => dispatch({ type: "VERIFY", payload: json }));
+  };
+}
+
+// verification()
+
+
+export { signUpAction, logInFun, profileUser, verification };

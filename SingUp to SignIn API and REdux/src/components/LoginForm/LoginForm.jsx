@@ -25,11 +25,12 @@ function LoginForm(props) {
                 password: password,
                 deviceTokan: deviceTokan
             })
-        } else if (props.login == null) {
-            setEmail('')
-            setPassword('')
-            alert('Bad Request')
         }
+        //  else if (props.login == null) {
+        //     alert('Bad Request')
+        //     setEmail('')
+        //     setPassword('')
+        // }
     }
     useEffect(() => {
         // console.log(props.login?.statusCode);

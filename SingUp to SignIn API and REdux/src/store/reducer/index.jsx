@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
   signup: null,
   login: null,
-  profile:null
+  profile: null,
+  verify: null
 };
 export default (state = INITIAL_STATE, action) => {
   console.log("action=>", action);
@@ -20,6 +21,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         profile: action.payload
+      }
+    case "VERIFY":
+      return {
+        ...state,
+        verify: action.payload
       }
   }
   return state;

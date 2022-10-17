@@ -7,6 +7,7 @@ import About from "../components/About/About"
 import Contact from "../components/Contact/Contact";
 import ErrorPage from "../components/ErrorPage/ErrorPage"
 // import Header from "../components/Header/Header"
+import Verify from "../components/Verify/Verify"
 import UserProfile from "../components/UserProfile/UserProfile"
 
 const AppRoute = () => {
@@ -21,8 +22,8 @@ const AppRoute = () => {
                 <Route path="*" element={<ErrorPage />} /> */}
                 <Route exact path="/" element={<SignUpForm />} />
                 <Route path="/login" element={<LoginForm />} />
-                
                 <Route path="/home" element={<Home />} />
+                <Route path="/verify" element={<Verify />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/userprofile" element={<UserProfile />} />

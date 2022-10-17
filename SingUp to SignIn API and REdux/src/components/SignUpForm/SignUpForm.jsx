@@ -23,7 +23,6 @@ function SignUpForm(props) {
   const [gender, setGender] = useState(null);
 
   const navigate = useNavigate();
-
   const signUp = (e) => {
     e.preventDefault()
     const total = {
@@ -46,12 +45,15 @@ function SignUpForm(props) {
       alert(props.signup.error)
     }
   }
+  const signIn = () => {
+    navigate('/login')
+  }
   useEffect(() => {
     if (props.signup?.statusCode == 201) {
-      navigate("/login");
+      navigate("/verify");
       alert(props.signup.message)
     } else if (props.signup?.statusCode == 400) {
-      console.log(props.signup.message)
+      alert(props.signup.message)
     }
   }, [props.signup])
 
@@ -70,23 +72,23 @@ function SignUpForm(props) {
           <Row className="mb-3">
             <Form.Group as={Col}>
               <Form.Label>First Name</Form.Label>
-              <Form.Control value={firstName} onChange={(text) => setFirstName(text.target.value)} type="text" name='firstName' placeholder="First Name" />
+              <Form.Control value={firstName} onChange={(text) => setFirstName(text.target.value)} type="text" name='firstName' placeholder="First Name" autoComplete="off" />
             </Form.Group>
 
             <Form.Group as={Col} >
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" value={lastName} onChange={(text) => setLastName(text.target.value)} name='lastName' placeholder="Last Name" />
+              <Form.Control type="text" value={lastName} onChange={(text) => setLastName(text.target.value)} name='lastName' placeholder="Last Name" autoComplete="off" />
             </Form.Group>
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col}>
               <Form.Label>Phone</Form.Label>
-              <Form.Control value={phone} maxLength={13} onChange={(text) => setPhone(text.target.value)} type="text" name='phone' placeholder="Phone" />
+              <Form.Control value={phone} maxLength={13} onChange={(text) => setPhone(text.target.value)} type="text" name='phone' placeholder="Phone" autoComplete="off" />
             </Form.Group>
 
             <Form.Group as={Col}>
               <Form.Label>Whatsapp no</Form.Label>
-              <Form.Control value={whatsapp_no} type="text" maxLength={13} onChange={(text) => setWhatsappNo(text.target.value)} name='whatsapp_no' placeholder="Whatsapp" />
+              <Form.Control value={whatsapp_no} type="text" maxLength={13} onChange={(text) => setWhatsappNo(text.target.value)} name='whatsapp_no' placeholder="Whatsapp" autoComplete="off" />
             </Form.Group>
           </Row>
           <Form.Group className="mb-3">
@@ -95,30 +97,30 @@ function SignUpForm(props) {
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Password</Form.Label>
-            <Form.Control value={password} type='password' onChange={(text) => setPassword(text.target.value)} placeholder="Password" name='password' />
+            <Form.Control value={password} type='password' onChange={(text) => setPassword(text.target.value)} placeholder="Password" name='password' autoComplete="off" />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>CNIC</Form.Label>
-            <Form.Control value={cnic} maxLength={13} onChange={(text) => setCnic(text.target.value)} type='text' placeholder="#cnin" name='cnic' />
+            <Form.Control value={cnic} maxLength={13} onChange={(text) => setCnic(text.target.value)} type='text' placeholder="#cnin" name='cnic' autoComplete="off" />
           </Form.Group>
           <Row className="mb-3">
             <Form.Group as={Col}>
               <Form.Label>DOB</Form.Label>
-              <Form.Control value={dob} onChange={(text) => setDob(text.target.value)} type='text' name='dob' />
+              <Form.Control value={dob} onChange={(text) => setDob(text.target.value)} type='text' name='dob' autoComplete="off" />
             </Form.Group>
             <Form.Group as={Col}>
               <Form.Label>Country</Form.Label>
-              <Form.Control value={countryId} onChange={(text) => setCountryId(text.target.value)} type='number' name="countryId" />
+              <Form.Control value={countryId} onChange={(text) => setCountryId(text.target.value)} type='number' name="countryId" autoComplete="off" />
             </Form.Group>
 
             <Form.Group as={Col}>
               <Form.Label>City</Form.Label>
-              <Form.Control value={cityId} onChange={(text) => setCityId(text.target.value)} type='number' name="cityId" />
+              <Form.Control value={cityId} onChange={(text) => setCityId(text.target.value)} type='number' name="cityId" autoComplete="off" />
             </Form.Group>
 
             <Form.Group as={Col} >
               <Form.Label>Gender</Form.Label>
-              <Form.Control value={gender} onChange={(text) => setGender(text.target.value)} type='text' name='gender' placeholder="Gender" />
+              <Form.Control value={gender} onChange={(text) => setGender(text.target.value)} type='text' name='gender' placeholder="Gender" autoComplete="off" />
             </Form.Group>
           </Row>
           {/* <Form.Group className="mb-3" id="formGridCheckbox">
@@ -126,6 +128,10 @@ function SignUpForm(props) {
           </Form.Group> */}
           <Button variant="primary" onClick={signUp}>
             Sign Up
+          </Button>
+          {/* &nbsp; */}
+          <Button onClick={signIn} variant="Link">
+            Login
           </Button>
         </Form>
       </div>
