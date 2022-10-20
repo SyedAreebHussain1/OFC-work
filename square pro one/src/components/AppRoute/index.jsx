@@ -16,10 +16,10 @@ import Settings from "../Pages/Settings";
 
 const AppRoute = () => {
     return (
-        <BrowserRouter>
-        {/* <Sitebar/> */}
+        // <BrowserRouter>
+        <div>
             <Routes>
-                <Route exact path="/" element={<Dashboard />} />
+                <Route exact path="/user/dashboard" element={<Dashboard />} />
                 <Route path="/user/plot_request" element={<PlotRequest />} />
                 <Route path="/user/add_project" element={<ProjectRegistration />} />
                 <Route path="/user/add_user" element={<AddEmpolyee />} />
@@ -30,7 +30,8 @@ const AppRoute = () => {
                 <Route path="/user/agent_list" element={<AgentList />} />
                 <Route path="/user/settings" element={<Settings />} />
             </Routes>
-        </BrowserRouter>
+        </div>
+       // {/* </BrowserRouter> */ }
     )
 }
 export default AppRoute

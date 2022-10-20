@@ -1,11 +1,14 @@
 import './App.css';
 import Sitebar from './components/Sitebar';
+import { BrowserRouter } from "react-router-dom";
 // import AppRoute from './components/AppRoute';
 function App() {
   return (
     <div className="App">
-      {/* <AppRoute/> */}
-    <Sitebar />
+      <BrowserRouter>
+        {/* <AppRoute/> */}
+        <Sitebar />
+      </BrowserRouter>
     </div>
   );
 }
