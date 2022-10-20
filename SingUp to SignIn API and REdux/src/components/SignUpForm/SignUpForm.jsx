@@ -50,7 +50,7 @@ function SignUpForm(props) {
   }
   useEffect(() => {
     if (props.signup?.statusCode == 201) {
-      navigate("/verify");
+      navigate("/accountverify");
       alert(props.signup.message)
     } else if (props.signup?.statusCode == 400) {
       alert(props.signup.message)

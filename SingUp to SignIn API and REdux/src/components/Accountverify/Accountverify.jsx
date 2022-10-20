@@ -24,7 +24,7 @@ const Verify = (props) => {
         }
     }
     useEffect(() => {
-        console.log(props.verify?.statusCode);
+        // console.log(props.verify?.statusCode);
         if (props.verify?.statusCode == 201) {
             alert(props.verify.message)
             navigate("/login");

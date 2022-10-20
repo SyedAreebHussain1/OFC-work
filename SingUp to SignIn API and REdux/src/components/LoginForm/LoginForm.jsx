@@ -32,7 +32,7 @@ function LoginForm(props) {
         if (props.login?.statusCode == 201) {
             alert(props.login.message)
             navigate("/home");
-        } else if (props.login?.statusCode == 400) {
+        } else if (props.login?.statusCode == 401) {
             alert(props.login.message)
         }
     }, [props.login])
