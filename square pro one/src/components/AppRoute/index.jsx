@@ -19,7 +19,7 @@ const AppRoute = () => {
         // <BrowserRouter>
         <div>
             <Routes>
-                <Route exact path="/user/dashboard" element={<Dashboard />} />
+                <Route exact path="/" element={<Dashboard />} />
                 <Route path="/user/plot_request" element={<PlotRequest />} />
                 <Route path="/user/add_project" element={<ProjectRegistration />} />
                 <Route path="/user/add_user" element={<AddEmpolyee />} />
