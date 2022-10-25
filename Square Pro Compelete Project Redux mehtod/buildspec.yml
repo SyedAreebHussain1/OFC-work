@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo runtime installed
+  pre_build:
+    commands:
+      
+      
+      - echo installing source npm dependencies
+      - npm install
+  build:
+    commands: 
+      - echo bilding
+      - export NODE_OPTIONS="--max-old-space-size=3072"
+      - npm run build
+  post_build:
+    commands:
+      - echo build complete on `date`
+      - aws s3 sync ./build s3://admin.squarefootexchange.com/
+      - aws cloudfront create-invalidation --distribution-id EE1BU7TQ3EEEJ --paths '/*'
