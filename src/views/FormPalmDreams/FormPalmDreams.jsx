@@ -296,8 +296,6 @@ const SignUp = () => {
               </Button> */}
           </Form>
         </div>
-        <br />
-        
       </div>
     </>
   );

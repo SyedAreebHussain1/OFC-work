@@ -1,12 +1,12 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import "./Style.css"
-import { useHistory, useNavigate, Link } from "react-router-dom";
+import { useHistory, useNavigate,Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { signInAction } from "../../../store/action/signIn"
-import { authSignIn } from "../../../store/reducer/authSignIn"
+import  {signInAction}  from "../../../store/action/signIn"
+import  {authSignIn}  from "../../../store/reducer/authSignIn"
 
 
 const Login = () => {
@@ -31,37 +31,25 @@ const Login = () => {
     }
     useEffect(() => {
         if (state?.signin?.statusCode == 201) {
-            alert(state?.signin?.message);
-            navigate('/user/form')
+          alert(state?.signin?.message);
+        //  navigate('/account_verify')
         }
-        else if (state?.signin?.statusCode == 400) {
-            alert(state?.signin?.message);
+         else if (state?.signin?.statusCode == 400) {
+          alert(state?.signin?.message);
         }
-    }, [state.signin]);
+      }, [state.signin]);
     return (
-        <div style={{
-            // boder: '1px solid black',
-            width: '100%', display: 'flex',
-            justifyContent: 'center',
-
-        }}>
+        <div style={{ boder: '1px solid black', width: '50%' }}>
+            {/* <h4>Login</h4> */}
             <Form
-             style={{
-                 border: '1px solid black',
-                 padding:'50px',
-                 marginTop:'10%',
-                 width:'30%',
-                 borderRadius:'5px',              
-                }}
                 name="normal_login"
                 className="login-form"
                 initialValues={{
                     remember: true,
                 }}
+            // onFinish={onFinish}
             >
-                <h1>Login</h1>
                 <Form.Item
-                
                     name="username"
                     rules={[
                         {
@@ -108,7 +96,7 @@ const Login = () => {
                 </Form.Item>
 
                 <Form.Item>
-                    <Button style={{borderRadius:'5px',overflow:'hidden'}} type="primary" className="login-form-button" onClick={logInn}>
+                    <Button type="primary" className="login-form-button" onClick={logInn}>
                         Log in
                     </Button>
                     Or <Link to='/'>Create Account</Link>

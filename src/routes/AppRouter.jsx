@@ -7,9 +7,6 @@ import FpCodeVerify from "../views/Auth/FpCodeVerify"
 import ResetPassword from "../views/Auth/ResetPassword";
 import Login from "../views/Auth/Login/Login";
 
-import Formm from "../views/Form"
-
-
 const AppRoute = () => {
     return (
         <BrowserRouter>
@@ -20,7 +17,6 @@ const AppRoute = () => {
                 <Route path="/fp_code_verify" element={< FpCodeVerify />} />
                 <Route path="/reset_password" element={< ResetPassword />} />
                 <Route path="/login" element={< Login />} />
-                <Route path="/user/form" element={< Formm />} />
             </Routes>
         </BrowserRouter>
     )
