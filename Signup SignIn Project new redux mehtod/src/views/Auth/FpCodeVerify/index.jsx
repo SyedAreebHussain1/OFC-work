@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 import { useDispatch, useSelector } from "react-redux";
 import { fpCodeAction } from "../../../store/action/fpCodeVerify"
-import { authFpCodeVerify } from "../../../store/reducer/authFpCodeVerify"
+// import { authFpCodeVerify } from "../../../store/reducer/authFpCodeVerify"
 
 
 const FpCodeVerify = () => {
@@ -15,7 +15,7 @@ const FpCodeVerify = () => {
 
     const state = useSelector((state) => state.authFpCodeVerify);
     console.log('fpcode props=>', state?.fpcode)
-    console.log('fpcode props=>', state?.fpcode?.data.token)
+    console.log('fpcode token props=>', state?.fpcode?.data.token)
 
     const verifying = () => {
         if (code) {
@@ -44,7 +44,7 @@ const FpCodeVerify = () => {
             <Form>
                 <Form.Group className="mb-3">
                     <Form.Label>Enter verification code</Form.Label>
-                    <Form.Control type="text" name='code' onChange={(text) => setCode(text.target.value)} placeholder="Enter new Password" />
+                    <Form.Control type="text" name='code' onChange={(text) => setCode(text.target.value)} placeholder="Enter code" />
                     <Form.Text className="text-muted">
                         Our verification team vets all requests thoroughly and bases their review on a number of inputs to determine whether an account is eligible to be verified.                    </Form.Text>
                 </Form.Group>

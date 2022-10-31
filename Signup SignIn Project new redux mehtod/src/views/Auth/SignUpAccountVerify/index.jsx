@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 // r
 import { useDispatch, useSelector } from "react-redux";
 import { signUpAccountVerifyAction } from "../../../store/action/signUpAccountVerifyAction";
-import { authSignUpAccountVerify } from "../../../store/reducer/index"
+// import { authSignUpAccountVerify } from "../../../store/reducer/index"
 
 const SignUpAccountVerify = () => {
     const [code, setCode] = useState(null)

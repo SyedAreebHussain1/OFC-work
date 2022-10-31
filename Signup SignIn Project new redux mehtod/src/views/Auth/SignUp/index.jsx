@@ -8,7 +8,7 @@ import { useHistory, useNavigate } from "react-router-dom";
 // re
 import { useDispatch, useSelector } from "react-redux";
 import { signUpAction } from "../../../store/action/index";
-import { authSignUp } from "../../../store/reducer/authSignUp";
+// import { authSignUp } from "../../../store/reducer/authSignUp";
 
 const SignUp = () => {
   const [body, setBody] = useState({

@@ -3,15 +3,14 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import React, { useState, useEffect } from 'react';
 import "./Style.css"
 import { useHistory, useNavigate, Link } from "react-router-dom";
-
 import { useDispatch, useSelector } from "react-redux";
 import { signInAction } from "../../../store/action/signIn"
-import { authSignIn } from "../../../store/reducer/authSignIn"
+// import { authSignIn } from "../../../store/reducer/authSignIn"
 
 
 const Login = () => {
     let r = (Math.random() + 1).toString(36).substring(7);
-    console.log(r)
+    // console.log(r)
     const [body, setBody] = useState({
         email: null,
         password: null,
@@ -32,7 +31,7 @@ const Login = () => {
     useEffect(() => {
         if (state?.signin?.statusCode == 201) {
             alert(state?.signin?.message);
-            navigate('/user/form')
+            navigate('/user/home')
         }
         else if (state?.signin?.statusCode == 400) {
             alert(state?.signin?.message);

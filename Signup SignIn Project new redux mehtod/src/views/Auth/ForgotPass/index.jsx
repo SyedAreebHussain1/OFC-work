@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { forgetPasswordAction } from "../../../store/action/forgetPassword"
-import { forgotpassword } from "../../../store/reducer/authForgetPassword"
+// import { forgotpassword } from "../../../store/reducer/authForgetPassword"
 
 
 const ForgotPass = () => {
@@ -14,7 +14,6 @@ const ForgotPass = () => {
 
     const state = useSelector((state) => state.authForgetPassword);
     console.log('forgotpassword props=>', state.forgotpassword)
-    console.log('forgotpassword props data=>', state.forgotpassword)
     const verifying = () => {
         if (email) {
             dispatch(forgetPasswordAction({ email: email }));
