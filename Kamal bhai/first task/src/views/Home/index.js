@@ -25,7 +25,9 @@ const Home = () => {
       setTotal(state?.user?.data?.data?.items);
     }
   }, [state?.user]);
-
+  useEffect(() => {
+    dispatch(userAction(search));
+  }, []);
   const sty = {
     boxShadow: "none",
     border: 0,
