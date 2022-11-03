@@ -12,20 +12,20 @@ const ResetPassword = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation()
-    console.log('state=>',location.state.token)
+    console.log('state=>', location.state.token)
 
     const state = useSelector((state) => state.authResetPassword);
     console.log('ResetPassword props=>', state.resetpassword)
     const resetPass = () => {
         if (password) {
-            dispatch(resetPasswordAction({ password: password },location.state.token));
+            dispatch(resetPasswordAction({ password: password }, location.state.token));
         }
     }
     useEffect(() => {
         // console.log(props.forgetpass?.statusCode);
         if (state.resetpassword?.statusCode == 200) {
             alert(state.resetpassword?.message)
-           navigate("/login");
+            navigate("/login");
         } else if (state.resetpassword?.statusCode == 404) {
             alert(state.resetpassword?.message)
         }
