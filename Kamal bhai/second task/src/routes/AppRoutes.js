@@ -1,19 +1,14 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import User from "../views/User";
-// import Formm from "../views/Form";
+import { Routes, Route } from "react-router-dom";
 
 
 const AppRoute = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* <Route exact path="/" element={<User />} /> */}
-        {/* <Route exact path="/" element={<Formm />} /> */}
-        {/* <Route exact path="/" element={<Formm />} /> */}
-        {/* <Route exact path="/" element={<Formm />} /> */}
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<div>Home</div>} />
+      <Route path="/about" element={<div>About</div>} />
+      <Route path="/contact" element={<div>Contact</div>} />
+    </Routes>
   );
 };
 export default AppRoute;
