@@ -5,28 +5,19 @@ import {
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
+  DashboardFilled,
+  DashboardOutlined,
 } from "@ant-design/icons";
 import "./style.css";
 import { Breadcrumb, Layout, Menu } from "antd";
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import AppRoute from "../../routes/AppRoutes";
+import HomeIcon from "@mui/icons-material/Home";
 
-//
+////
 const { Header, Content, Footer, Sider } = Layout;
-// function getItem(label, key, icon, children) {
-//   return {
-//     key,
-//     icon,
-//     children,
-//     label,
-//   };
-// }
-// const items = [
-//   getItem("Option 1", "1", <PieChartOutlined />),
-//   getItem("Option 2", "2", <DesktopOutlined />),
-//   getItem("Files", "9", <FileOutlined />),
-// ];
+
 const SiteBar = () => {
   const location = useLocation();
   console.log("location", location.pathname);
@@ -62,6 +53,12 @@ const SiteBar = () => {
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
       >
+        <div style={{ width: "40%", marginLeft: "25%" }}>
+          <HomeIcon
+            sx={{ fontSize: 50 }}
+            // component={HomeIcon}
+          />
+        </div>
         <div className="logo" />
         <Menu
           theme="dark"
@@ -77,7 +74,7 @@ const SiteBar = () => {
           // }}
           onClick={menuChange}
           items={[
-            { label: "Home", key: "/", icon: <HomeOutlined /> },
+            { label: "DASHBOARD", key: "/", icon: <DashboardOutlined /> },
             { label: "About", key: "/about", icon: <PieChartOutlined /> },
             { label: "Contact", key: "/contact", icon: <DesktopOutlined /> },
             {
@@ -90,15 +87,17 @@ const SiteBar = () => {
         />
       </Sider>
       <Layout className="site-layout">
-        <Header
+        {/* <Header
           className="site-layout-background"
           style={{
             padding: 0,
           }}
-        />
+        /> */}
         <Content
           style={{
             margin: "0 16px",
+            height: "520px",
+            overflow: "scroll",
           }}
         >
           <Breadcrumb
@@ -109,6 +108,7 @@ const SiteBar = () => {
             <Breadcrumb.Item>Page</Breadcrumb.Item>
             <Breadcrumb.Item>{urlName}</Breadcrumb.Item>
           </Breadcrumb>
+          <h6>{urlName?.toUpperCase()}</h6>
           <div
             className="site-layout-background"
             style={{
@@ -117,17 +117,17 @@ const SiteBar = () => {
             }}
           >
             {/* Bill is a cat. */}
-            <h4>{urlName?.toUpperCase()}</h4> 
+            {/* <h4>{urlName?.toUpperCase()}</h4>  */}
             <AppRoute />
           </div>
-        </Content>
         <Footer
           style={{
             textAlign: "center",
           }}
         >
-          Ant Design ©2202 Created by Ant UED
+          Ant Design ©2022 Created by Ant UED
         </Footer>
+        </Content>
       </Layout>
     </Layout>
   );

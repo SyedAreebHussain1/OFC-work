@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { userAction } from "../../store/action/userAction";
 import { useDispatch, useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import SearchIcon from "@mui/icons-material/Search";
+import React, { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
 const User = () => {
   const [search, setSearch] = useState(null);
@@ -33,7 +36,7 @@ const User = () => {
     border: 0,
     outline: 0,
     background: "transparent",
-    borderBottom: "1px solid black",
+    // borderBottom: "1px solid black",
     borderRadius: "2px",
     width: "50%",
   };
@@ -41,16 +44,32 @@ const User = () => {
     <div>
       <div className="App">
         <br />
-        <h4 style={{ color: "green" }}>Square Pro</h4>
+        {/* <h4 style={{ color: "green" }}>City Search</h4> */}
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Form.Control
+          <Box
+            component="form"
+            sx={{
+              "& > :not(style)": { m: 1, width: "55ch" },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+              <TextField
+                style={sty}
+                id="outlined-basic"
+                label="Search"
+                variant="outlined"
+                onChange={(text) => setSearch(text.target.value)}
+              />
+              <SearchIcon style={{ cursor: "pointer" }} onClick={searchData} />
+          </Box>
+          {/* <Form.Control
             style={sty}
             placeholder="Search"
             onChange={(text) => setSearch(text.target.value)}
             aria-label="Username"
             aria-describedby="basic-addon1"
-          />
-          <SearchIcon style={{ cursor: "pointer" }} onClick={searchData} />
+          /> */}
         </div>
         <br />
         <Table striped bordered hover variant="dark">
