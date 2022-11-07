@@ -2,16 +2,18 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import User from "../views/User";
 // import About from "../views/about";
+import Formm from "../views/Form";
+import Tabels from "../views/Tabels";
 
 const AppRoute = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<div>Home</div>} />
-      <Route path="/about" element={<User/>} />
-      <Route path="/contact" element={<div>Contact</div>} />
+      <Route exact path="/" element={<User />} />
+      <Route path="/user/registration" element={<Formm />} />
+      {/* <Route path="/contact" element={<div>Contact</div>} />  */}
+      <Route path="/user/data" element={<Tabels />} />
     </Routes>
   );
 };
-
 
 export default AppRoute;

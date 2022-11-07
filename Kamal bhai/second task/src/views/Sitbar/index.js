@@ -36,10 +36,10 @@ const SiteBar = () => {
   useEffect(() => {
     if (location.pathname == "/") {
       setUrlName("Dashboard");
-    } else if (location.pathname == "/about") {
-      setUrlName("About");
-    } else if (location.pathname == "/contact") {
-      setUrlName("Contact");
+    } else if (location.pathname == "/user/registration") {
+      setUrlName("User Regsitration Form");
+    } else if (location.pathname == "/user/data") {
+      setUrlName("User Data");
     }
   }, [menuChange]);
   return (
@@ -75,8 +75,8 @@ const SiteBar = () => {
           onClick={menuChange}
           items={[
             { label: "DASHBOARD", key: "/", icon: <DashboardOutlined /> },
-            { label: "About", key: "/about", icon: <PieChartOutlined /> },
-            { label: "Contact", key: "/contact", icon: <DesktopOutlined /> },
+            { label: "RESGISTRATION", key: "/user/registration", icon: <PieChartOutlined /> },
+            { label: "DATA", key: "/user/data", icon: <DesktopOutlined /> },
             {
               label: "Signout",
               key: "signout",
@@ -125,7 +125,7 @@ const SiteBar = () => {
             textAlign: "center",
           }}
         >
-          Ant Design ©2022 Created by Ant UED
+          Square One ©2022 Property Dealers
         </Footer>
         </Content>
       </Layout>
