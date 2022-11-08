@@ -20,13 +20,13 @@ const { Header, Content, Footer, Sider } = Layout;
 
 const SiteBar = () => {
   const location = useLocation();
-  console.log("location", location.pathname);
+  // console.log("location", location.pathname);
   const [collapsed, setCollapsed] = useState(false);
   const [urlName, setUrlName] = useState();
-  console.log("urlName", urlName);
+  // console.log("urlName", urlName);
   const navigate = useNavigate();
   const menuChange = ({ key }) => {
-    console.log("key", key);
+    // console.log("key", key);
     if (key == "signout") {
       //TODO, sign out feature here
     } else {

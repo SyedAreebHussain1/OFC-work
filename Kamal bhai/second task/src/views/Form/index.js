@@ -17,11 +17,13 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
 import Button from "@mui/material/Button";
 
+import Tabels from "../Tabels";
 
-import Tabels from "../Tabels"
+import { useNavigate } from "react-router-dom";
 
 const Formm = () => {
   const [value, setValue] = React.useState(dayjs(""));
+  const [total, setTotal] = useState([]);
   const [body, setBody] = useState({
     firstName: null,
     lastName: null,
@@ -31,19 +33,31 @@ const Formm = () => {
     tel: null,
     phone: null,
     whatsapp_no: null,
-    cnic: Number(null),
+    cnic: null,
     dob: null,
     // countryId: null,
     // cityId: null,
     gender: null,
   });
+  const navigate = useNavigate();
   const submit = () => {
-    console.log(body.cnic);
-    console.log("body", body);
-    const handleChange = (newValue) => {
-      setValue(newValue);
-    };
+    // console.log(body.cnic);
+    let tempArr = [];
+    tempArr.push(body);
+    console.log("body=>", body);
+    setTotal([...total, ...tempArr]);
+    console.log("total=>", total);
+
+    // localStorage.setItem("localData", total);;
+
+    // navigate("/user/data", { state: { body: [body] } });
+    // const handleChange = (newValue) => {
+    //   setValue(newValue);
+    // };
   };
+  const propSend = () => {
+    alert('hello world')
+  }
   return (
     <div>
       <div
@@ -110,7 +124,7 @@ const Formm = () => {
               }
             />
             <TextField
-              style={{ width: "96%" }}
+              style={{ width: "91%" }}
               id="standard-basic"
               label="Mobile number or email address"
               variant="standard"
@@ -126,14 +140,9 @@ const Formm = () => {
               variant="standard"
               // type="number"
               pattern="[0-9]*"
-              //   onInput = {(e) =>{
-              //     e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,12)
-              // }}
               // inputProps={{ maxLength: 13 }}
               value={body.cnic}
-              onChange={(text) =>
-                setBody({ ...body, cnic: Number(text.target.value) })
-              }
+              onChange={(text) => setBody({ ...body, cnic: text.target.value })}
             />
             <TextField
               id="standard-basic"
@@ -219,10 +228,10 @@ const Formm = () => {
           </Button>
         </FormControl>
       </div>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <div>
-        <Tabels/>
+        <Tabels onClick={propSend} sendd={total} />
       </div>
     </div>
   );

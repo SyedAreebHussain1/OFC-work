@@ -1,73 +1,101 @@
 // import React, { useState, useEffect } from "react";
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+// import { userAction } from "../../store/action/userAction";
+// import { useDispatch, useSelector } from "react-redux";
+import Table from "react-bootstrap/Table";
+import Form from "react-bootstrap/Form";
+import SearchIcon from "@mui/icons-material/Search";
+import React, { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
+import { useLocation, useNavigate } from "react-router-dom";
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  "&:last-child td, &:last-child th": {
+function Tabels(props) {
+  console.log("props", props.sendd.firstName);
+  const [search, setSearch] = useState(null);
+  const [data, setData] = useState([]);
+  // console.log('data=>',data?.firstName)
+  const location = useLocation();
+  // console.log('location=>',location?.state?.body)
+  const sty = {
+    boxShadow: "none",
     border: 0,
-  },
-}));
+    outline: 0,
+    background: "transparent",
+    // borderBottom: "1px solid black",
+    borderRadius: "2px",
+    width: "50%",
+  };
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
-
-export default function Tabels() {
+  useEffect(() => {
+    // let localData = localStorage.getItem("localData");
+    // console.log('localData=>',localData)
+    if (props.sendd) {
+      setData(props.sendd);
+    }else{
+      alert('hello')
+    }
+    // console.log('hello world')
+  }, [props.sendd])
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Name (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <div>
+      <div className="App">
+        <br />
+        {/* <div style={{ display: "flex", justifyContent: "center" }}></div> */}
+        <br />
+        <Table striped bordered hover variant="dark">
+          <thead>
+            <tr>
+              {/* <th>#</th> */}
+              <th>Name</th>
+              <th>F name</th>
+              <th>Gender</th>
+              <th>email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data?.map((v, i) => {
+              console.log("v", v);
+              return (
+                <tr key={i}>
+                  <td>
+                    {v?.firstName} {v?.lastName}
+                  </td>
+                  <td>{v?.fatherName}</td>
+                  <td>{v?.gender}</td>
+                  <td>{v?.email}</td>
+                </tr>
+              );
+            })}
+            <tr>
+              <td>Umar Khan</td>
+              <td>Ali Khan</td>
+              <td>Male</td>
+              <td>umar123@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Talha Khan</td>
+              <td>Obaid Khan</td>
+              <td>Male</td>
+              <td>Talha123@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Uzair Ali</td>
+              <td>Farhan Khan</td>
+              <td>Male</td>
+              <td>uzair123@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Shan Hussain</td>
+              <td>Usman Hussain</td>
+              <td>Male</td>
+              <td>shan123@gmail.com</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+    </div>
   );
 }
+export default Tabels;

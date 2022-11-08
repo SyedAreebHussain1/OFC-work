@@ -11,7 +11,7 @@ const AppRoute = () => {
       <Route exact path="/" element={<User />} />
       <Route path="/user/registration" element={<Formm />} />
       {/* <Route path="/contact" element={<div>Contact</div>} />  */}
-      <Route path="/user/data" element={<Tabels />} />
+      <Route path="/user/data" element={<div>Data</div>} />
     </Routes>
   );
 };
