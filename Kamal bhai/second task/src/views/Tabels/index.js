@@ -11,9 +11,10 @@ import TextField from "@mui/material/TextField";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Tabels(props) {
-  console.log("props", props.sendd.firstName);
-  const [search, setSearch] = useState(null);
-  const [data, setData] = useState([]);
+  console.log("props", props?.sendd);
+  // console.log("props b", props?.sendd);
+  const [val, setVal] = useState();
+  const [data,setData] = useState()
   // console.log('data=>',data?.firstName)
   const location = useLocation();
   // console.log('location=>',location?.state?.body)
@@ -26,18 +27,13 @@ function Tabels(props) {
     borderRadius: "2px",
     width: "50%",
   };
-
-
   useEffect(() => {
-    // let localData = localStorage.getItem("localData");
-    // console.log('localData=>',localData)
-    if (props.sendd) {
-      setData(props.sendd);
-    }else{
-      alert('hello')
+    if (props?.sendd) {
+      setData(props?.sendd);
+      ////
     }
-    // console.log('hello world')
-  }, [props.sendd])
+  }, [props]);
+
   return (
     <div>
       <div className="App">
@@ -56,7 +52,7 @@ function Tabels(props) {
           </thead>
           <tbody>
             {data?.map((v, i) => {
-              console.log("v", v);
+              // console.log("v", v);
               return (
                 <tr key={i}>
                   <td>

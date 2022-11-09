@@ -7,6 +7,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
+import { KEY_C } from "keycode-js";
 
 const User = () => {
   const [search, setSearch] = useState(null);
@@ -17,11 +19,16 @@ const User = () => {
   const state = useSelector((state) => state.userred);
   console.log("state=>", state?.user);
   console.log("state data=>", state?.user?.data?.data?.items);
-  const searchData = () => {
-    console.log("search=>", search);
+
+  const searchData = (e) => {
     if (search) {
       dispatch(userAction(search));
     }
+
+    console.log("search=>", search);
+    // if (keyboard==13) {
+    //     // Cancel the default action, if needed
+    // }
   };
   useEffect(() => {
     if (state?.user?.status == 200) {
@@ -54,14 +61,14 @@ const User = () => {
             noValidate
             autoComplete="off"
           >
-              <TextField
-                style={sty}
-                id="outlined-basic"
-                label="Search"
-                variant="outlined"
-                onChange={(text) => setSearch(text.target.value)}
-              />
-              <SearchIcon style={{ cursor: "pointer" }} onClick={searchData} />
+            <TextField
+              style={sty}
+              id="outlined-basic"
+              label="Search"
+              variant="outlined"
+              onChange={(text) => setSearch(text.target.value)}
+            />
+            <SearchIcon style={{ cursor: "pointer" }} onClick={searchData} />
           </Box>
           {/* <Form.Control
             style={sty}

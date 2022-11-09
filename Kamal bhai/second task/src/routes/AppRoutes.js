@@ -4,6 +4,8 @@ import User from "../views/User";
 // import About from "../views/about";
 import Formm from "../views/Form";
 import Tabels from "../views/Tabels";
+import Todo from "../views/Todo";
+
 
 const AppRoute = () => {
   return (
@@ -12,6 +14,7 @@ const AppRoute = () => {
       <Route path="/user/registration" element={<Formm />} />
       {/* <Route path="/contact" element={<div>Contact</div>} />  */}
       <Route path="/user/data" element={<div>Data</div>} />
+      <Route path="/user/todo" element={<Todo/>} />
     </Routes>
   );
 };

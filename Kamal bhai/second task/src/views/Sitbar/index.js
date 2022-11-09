@@ -37,9 +37,12 @@ const SiteBar = () => {
     if (location.pathname == "/") {
       setUrlName("Dashboard");
     } else if (location.pathname == "/user/registration") {
-      setUrlName("User Regsitration Form");
+      setUrlName("User regsitration form");
     } else if (location.pathname == "/user/data") {
       setUrlName("User Data");
+    }
+     else if (location.pathname == "/user/todo") {
+      setUrlName("User todo");
     }
   }, [menuChange]);
   return (
@@ -77,6 +80,7 @@ const SiteBar = () => {
             { label: "DASHBOARD", key: "/", icon: <DashboardOutlined /> },
             { label: "RESGISTRATION", key: "/user/registration", icon: <PieChartOutlined /> },
             { label: "DATA", key: "/user/data", icon: <DesktopOutlined /> },
+            { label: "TODO", key: "/user/todo", icon: <DesktopOutlined /> },
             {
               label: "Signout",
               key: "signout",

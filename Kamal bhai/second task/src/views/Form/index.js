@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
@@ -21,9 +21,17 @@ import Tabels from "../Tabels";
 
 import { useNavigate } from "react-router-dom";
 
+import { useDispatch, useSelector } from "react-redux";
+import {formSubmitAction} from "../../store/action/userAction";
+
 const Formm = () => {
   const [value, setValue] = React.useState(dayjs(""));
   const [total, setTotal] = useState([]);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.userred);
+  console.log("state formdata=>", state.formdata);
+  const navigate = useNavigate();
+
   const [body, setBody] = useState({
     firstName: null,
     lastName: null,
@@ -39,25 +47,19 @@ const Formm = () => {
     // cityId: null,
     gender: null,
   });
-  const navigate = useNavigate();
   const submit = () => {
     // console.log(body.cnic);
-    let tempArr = [];
-    tempArr.push(body);
-    console.log("body=>", body);
-    setTotal([...total, ...tempArr]);
-    console.log("total=>", total);
-
-    // localStorage.setItem("localData", total);;
-
+    // if (body) {
+      let tempArr = [];
+      tempArr.push(body);
+      // console.log("body=>", body);
+      setTotal([...total, ...tempArr]);
+      // console.log('total',total)
+      // console.log('temarry',tempArr)
+      
     // navigate("/user/data", { state: { body: [body] } });
-    // const handleChange = (newValue) => {
-    //   setValue(newValue);
-    // };
+      dispatch(formSubmitAction([...total, ...tempArr]));
   };
-  const propSend = () => {
-    alert('hello world')
-  }
   return (
     <div>
       <div
@@ -71,7 +73,7 @@ const Formm = () => {
         }}
       >
         <FormControl>
-          {/* <h5 style={{ color: "green" }}>User information</h5> */}
+          <h5 style={{ color: "green" }}>User information</h5>
           <p
           //  style={{ marginTop: "-10px" }}
           >
@@ -200,12 +202,12 @@ const Formm = () => {
               <FormLabel id="demo-radio-buttons-group-label">Gender?</FormLabel>
               <div style={{ display: "flex" }}>
                 <FormControlLabel
-                  value="female"
+                  value="FEMALE"
                   control={<Radio />}
                   label="Female"
                 />
                 <FormControlLabel
-                  value="male"
+                  value="MALE"
                   control={<Radio />}
                   label="Male"
                 />
@@ -221,7 +223,7 @@ const Formm = () => {
           <hr />
           <p>
             People who use our service may have uploaded your contact
-            information to Square One. <a>Learn more.</a>{" "}
+            information to Square One. <a href="#">Learn more.</a>{" "}
           </p>
           <Button variant="contained" onClick={submit}>
             Submit
@@ -231,7 +233,8 @@ const Formm = () => {
       <br />
       <br />
       <div>
-        <Tabels onClick={propSend} sendd={total} />
+      {/* sendd={total} */}
+        <Tabels sendd={state.formdata}  />
       </div>
     </div>
   );

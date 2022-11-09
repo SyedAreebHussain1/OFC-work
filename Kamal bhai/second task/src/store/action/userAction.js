@@ -1,8 +1,10 @@
 import { USER } from "../../constants/user";
+import { FORMSUBMIT } from "../../constants/user";
+
 import axios from "axios";
 
 export const userAction = (search) => {
-  console.log(search, "<=action fun");
+  // console.log(search, "<=action fun");
   return (dispatch) => {
     axios
       .get(
@@ -12,8 +14,15 @@ export const userAction = (search) => {
       )
       .then((res) => dispatch({ type: USER, payload: res }))
       .catch((err) => {
-        console.log('err',err);
+        console.log("err", err);
       });
+  };
+};
+
+export const formSubmitAction = (data) => {
+  console.log(data, "<=action fun");
+  return (dispatch) => {
+    dispatch({ type: FORMSUBMIT, payload: data });
   };
 };
 
