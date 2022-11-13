@@ -12,17 +12,17 @@ const SignUpAccountVerify = () => {
   const [error, setError] = useState(null);
   const state = useSelector((state) => state.authReducer);
   console.log("state account verify", state?.signupaccountverify);
-  console.log(
-    "state account verify",
-    state?.signupaccountverify?.data?.statusCode
-  );
+  // console.log(
+  //   "state account verify",
+  //   // state?.signupaccountverify?.data
+  // );
   const onSuccess = (message) => {
     setMsg(message);
     console.log("msg", msg);
   };
   const onFailure = (message) => {
     setError(message);
-    console.log("error", error);
+    console.log("error", error?.data?.statusCode);
   };
   const verify = (e) => {
     // console.log("body=>", body);
@@ -34,11 +34,16 @@ const SignUpAccountVerify = () => {
   useEffect(() => {
     if (state?.signupaccountverify?.data?.statusCode == 201) {
       alert(state?.signupaccountverify?.data?.message);
-      navigate('/')
-    } else {
-      alert(state?.signupaccountverify?.data?.message);
+      navigate('/login')
+    }else if(state?.signupaccountverify == null){
+      // //
     }
   }, [state?.signupaccountverify]);
+  useEffect(() => {
+   if( error?.data?.statusCode == 404) {
+      alert(error?.data?.message);
+    }
+  }, [error?.data]);
   return (
     <div className="mainDiv">
       <div className="box">

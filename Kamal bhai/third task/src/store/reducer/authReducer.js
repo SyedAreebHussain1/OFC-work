@@ -6,7 +6,7 @@ import { VERIFYEMAIL } from "../../constants/authConstants";
 const INITIAL_STATE = {
   signup: null,
   signupaccountverify: null,
-  signin: null,
+  signin: localStorage.getItem("token"),
   emailverify:null
 };
 const authSignUp = (state = INITIAL_STATE, action) => {

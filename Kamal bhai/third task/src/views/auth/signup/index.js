@@ -8,6 +8,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpAction } from "../../../store/action/authAction";
+import { Link } from "react-router-dom";
+
 import "../style.css";
 
 const SignUp = () => {
@@ -18,7 +20,7 @@ const SignUp = () => {
   //   console.log(error)
   const state = useSelector((state) => state?.authReducer);
   console.log("state signup=>", state?.signup);
-  console.log("state signup msg=>", state?.signup?.data?.statusCode);
+  // console.log("state signup msg=>", state?.signup?.data?.statusCode);
   const [body, setBody] = useState({
     firstName: null,
     lastName: null,
@@ -49,11 +51,16 @@ const SignUp = () => {
   useEffect(() => {
     if (state?.signup?.data?.statusCode == 201) {
       alert(state?.signup?.data?.message);
-      navigate("/signupaccountverify");
-    } else if (state?.signup?.data?.statusCode == 400) {
-      alert(state?.signup?.data?.message);
-    }
+      navigate("/accountverify");
+    } 
+    
   }, [state.signup]);
+
+  useEffect(() => {
+    if (error?.data?.statusCode == 400) {
+      alert(error?.data?.message);
+    }
+  }, [error?.data]);
 
   return (
     <div className="signUpmainDiv">
@@ -193,9 +200,9 @@ const SignUp = () => {
             </button>
             <p>
               Do you have an account ?{" "}
-              <a className="a" href="#">
+              <Link to='/login' className="a" href="#">
                 Sign in
-              </a>{" "}
+              </Link>{" "}
             </p>
           </form>
         </div>

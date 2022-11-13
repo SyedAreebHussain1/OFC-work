@@ -1,23 +1,16 @@
 import React from "react";
 import "./App.css";
-// import AppRoute from "./routes/AppRouter";
-// import SignUp from "./views/auth/signup";
-// import Login from "./views/auth/login";
 import AuthRoutes from "./routes/authRoutes";
-// import AppRoutes from "./routes/AppRoutes"
-import SiteBar from "./views/dashboard"
+import SiteBar from "./views/dashboard";
+import { useSelector } from "react-redux";
 
 function App() {
+  const state = useSelector((state) => state?.authReducer);
+  // console.log(state?.signin);
+  // console.log("state dashboard", state?.signin?.data?.data?.token);
+
   return (
-    <div className="App">
-      <AuthRoutes/>
-      <SiteBar/>
-      {/* <AppRoutes/> */}
-      {/* <Login /> */}
-      {/* <h1>Heelo</h1> */}
-      {/* <AppRoute /> */}
-      {/* <SignUp /> */}
-    </div>
+    <div className="App">{state?.signin ? <SiteBar /> : <AuthRoutes />}</div>
   );
 }
 export default App;

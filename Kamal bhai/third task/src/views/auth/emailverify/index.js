@@ -34,11 +34,16 @@ const EmailVerify = () => {
   useEffect(() => {
     if (state?.emailverify?.data?.statusCode == 201) {
       alert(state?.emailverify?.data?.message);
-     navigate('/signupaccountverify')
-    } else {
-      alert(state?.emailverify?.data?.message);
+     navigate('/accountverify')
+    } else if(state?.emailverify == null) {
+   // 
     }
   }, [state?.emailverify]);
+  useEffect(() => {
+    if (error?.data?.statusCode == 404) {
+      alert(error?.data?.message);
+        }
+  }, [error?.data]);
   
   return (
     <div className="mainDiv">

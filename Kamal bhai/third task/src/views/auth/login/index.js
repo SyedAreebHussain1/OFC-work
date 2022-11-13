@@ -22,6 +22,7 @@ const Login = () => {
   // console.log("state login", state?.signin?.data?.statusCode);
   const onSuccess = (message) => {
     setMsg(message);
+    navigate('/dashboard')
     console.log("msg", msg);
   };
   const onFailure = (message) => {
@@ -38,15 +39,21 @@ const Login = () => {
   const signUp = () => {
     navigate("/signup");
   };
+  // useEffect(() => {
+  //   if (state?.signin?.data?.statusCode == 201) {
+  //     alert(state?.signin?.data?.message);
+  //     // navigate('/dashboard')
+  //   }
+  // }, [state?.signin]);
   useEffect(() => {
-    if (state?.signin?.data?.statusCode == 201) {
-      alert(state?.signin?.data?.message)
-      navigate('/dashboard')
-    } else if (error?.data?.statusCode == 400){
+    if (error?.data?.statusCode == 400) {
+      alert(error?.data?.message);
       navigate("/emailaccount");
+    }
+    else if (error?.data?.statusCode == 401) {
       alert(error?.data?.message);
     }
-  }, [state?.signin]);
+  }, [error?.data]);
   return (
     <div className="mainDiv">
       <div className="box">
