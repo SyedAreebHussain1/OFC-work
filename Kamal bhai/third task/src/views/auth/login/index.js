@@ -1,4 +1,3 @@
-// import React from "react";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { logInAction } from "../../../store/action/authAction";
@@ -21,17 +20,44 @@ const Login = () => {
   console.log("state login", state?.signin);
   // console.log("state login", state?.signin?.data?.statusCode);
   const onSuccess = (message) => {
-    setMsg(message);
-    navigate('/dashboard')
-    console.log("msg", msg);
+    // setMsg(message);
+    console.log('mmsg',message)
+    // console.log("msg", msg);
+    alert("Successfully Signin");
+    navigate("/dashboard");
   };
   const onFailure = (message) => {
-    setError(message);
-    console.log("errorr", error);
+    // setError(message);
+    console.log("errorr", message);
+      if (message.message == "Password Must Contain a number from 0-9") {
+      alert(message.message);
+    } else if (message.message == "Please verified your account") {
+        alert(message.message);
+        navigate("/emailaccount");
+    }else{
+      alert(message?.message)
+    }
   };
+
+  // const onKeyDownHandler = e => {
+  //   if (e.keyCode === 13) {
+  //     logInFun();
+  //   }
+  // };
+  // const detectKeyDown = (e) => {
+  //   // e.preventDefault();
+  //   console.log(body);
+  //   console.log("clicked key:", e.key);
+  //   if (e.key === "Enter") {
+  //     logInFun();
+  //   }
+  // };
+  // console.log("body=>", body);
+
   const logInFun = (e) => {
-    // console.log("body=>", body);
-    if (body) {
+    e.preventDefault();
+    console.log("body=>", body);
+    if (body.email !== null && body.password !== null) {
       dispatch(logInAction(body, onSuccess, onFailure));
     }
   };
@@ -45,15 +71,20 @@ const Login = () => {
   //     // navigate('/dashboard')
   //   }
   // }, [state?.signin]);
-  useEffect(() => {
-    if (error?.data?.statusCode == 400) {
-      alert(error?.data?.message);
-      navigate("/emailaccount");
-    }
-    else if (error?.data?.statusCode == 401) {
-      alert(error?.data?.message);
-    }
-  }, [error?.data]);
+
+  // useEffect(() => {
+  //   if (error?.statusCode == 400) {
+  //     alert(error?.message);
+  //   } else if (error?.statusCode == 401) {
+  //       alert(error?.message);
+  //       navigate("/emailaccount");
+  //   }
+  // }, [error]);
+
+  // useEffect(() => {
+  //   document.addEventListener("keypress", detectKeyDown, true);
+  // }, []);
+
   return (
     <div className="mainDiv">
       <div className="box">
@@ -66,24 +97,33 @@ const Login = () => {
           </p>
         </div>
         <div className="form-box">
-          {/* <form action=""> */}
-          <input
-            type="text"
-            placeholder="Email address or mobile number"
-            name="email"
-            onChange={(text) => setBody({ ...body, email: text.target.value })}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            onChange={(text) =>
-              setBody({ ...body, password: text.target.value })
-            }
-            name="password"
-          />
-          <button onClick={logInFun}>Login</button>
-          <a href="#">Forgotten password</a>
-          {/* </form> */}
+          <form onSubmit={logInFun}>
+            <input
+              value={body.email}
+              type="text"
+              placeholder="Email address or mobile number"
+              name="email"
+              onChange={(text) =>
+                setBody({ ...body, email: text.target.value })
+              }
+            />
+            <input
+              value={body.password}
+              type="password"
+              placeholder="password"
+              onChange={(text) =>
+                setBody({ ...body, password: text.target.value })
+              }
+              name="password"
+            />
+            <button
+              type="submit"
+            >
+              Login
+            </button>
+            {/* <input className="button" type="submit" value="Login" /> */}
+            <a>Forgotten password</a>
+          </form>
           <hr />
           <div className="create-btn">
             <button onClick={signUp}>Create new Account</button>

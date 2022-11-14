@@ -11,7 +11,7 @@ const AuthRoutes = () => {
       <Routes>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/accountverify" element={<SignUpAccountVerify />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/" element={<Login />} />
         <Route path="/emailaccount" element={<EmailVerify />} />
       </Routes>
     </div>

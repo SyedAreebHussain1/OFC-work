@@ -7,7 +7,8 @@ const INITIAL_STATE = {
   signup: null,
   signupaccountverify: null,
   signin: localStorage.getItem("token"),
-  emailverify:null
+  // signin: null,
+  emailverify: null,
 };
 const authSignUp = (state = INITIAL_STATE, action) => {
   console.log("action=>", action);

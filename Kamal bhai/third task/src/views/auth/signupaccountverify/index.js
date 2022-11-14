@@ -25,8 +25,9 @@ const SignUpAccountVerify = () => {
     console.log("error", error?.data?.statusCode);
   };
   const verify = (e) => {
+    e.preventDefault();
     // console.log("body=>", body);
-    if (code) {
+    if (code !== null) {
       dispatch(signUpAccountVerifyAction({ code: code }, onSuccess, onFailure));
     }
   };
@@ -34,13 +35,13 @@ const SignUpAccountVerify = () => {
   useEffect(() => {
     if (state?.signupaccountverify?.data?.statusCode == 201) {
       alert(state?.signupaccountverify?.data?.message);
-      navigate('/login')
-    }else if(state?.signupaccountverify == null){
+      navigate("/");
+    } else if (state?.signupaccountverify == null) {
       // //
     }
   }, [state?.signupaccountverify]);
   useEffect(() => {
-   if( error?.data?.statusCode == 404) {
+    if (error?.data?.statusCode == 404) {
       alert(error?.data?.message);
     }
   }, [error?.data]);
@@ -56,15 +57,15 @@ const SignUpAccountVerify = () => {
           </p>
         </div>
         <div className="form-box">
-          {/* <form> */}
-          <input
-            type="text"
-            onChange={(text) => setCode(text.target.value)}
-            placeholder="Enter Code"
-            name="code"
-          />
-          <button onClick={verify}>Verify</button>
-          {/* </form> */}
+          <form onSubmit={verify}>
+            <input
+              type="text"
+              onChange={(text) => setCode(text.target.value)}
+              placeholder="Enter Code"
+              name="code"
+            />
+            <button type="submit">Verify</button>
+          </form>
         </div>
       </div>
     </div>

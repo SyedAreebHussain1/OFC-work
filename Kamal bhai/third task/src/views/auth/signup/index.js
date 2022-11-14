@@ -35,16 +35,40 @@ const SignUp = () => {
     gender: null,
   });
   const onSuccess = (message) => {
-    setMsg(message);
-    console.log("msg", msg);
+    // setMsg(message);
+    console.log("msg", message);
+    // if (message.data.message == "Successfully Signup") {
+    //   alert(message.data.message);
+    //   // navigate("/accountverify");
+    // } else {
+    //   alert(message.data.message);
+    // }
   };
   const onFailure = (message) => {
-    setError(message);
-    console.log("error", error);
+    // setError(message);
+    // console.log("error", message);
+    if (message.data.statusCode == 400) {
+      alert(message.data.message);
+    } else {
+      alert(message.data.message);
+    }
   };
   const signUpFun = (e) => {
+    e.preventDefault();
     // console.log("body=>", body);
-    if (body) {
+    if (
+      body.firstName !== null &&
+      body.lastName !== null &&
+      body.phoneName !== null &&
+      body.whatsapp_no !== null &&
+      body.cnic !== null &&
+      body.dob !== null &&
+      body.countryId !== null &&
+      body.cityId !== null &&
+      body.gender !== null &&
+      body.email !== null &&
+      body.password !== null
+    ) {
       dispatch(signUpAction(body, onSuccess, onFailure));
     }
   };
@@ -52,15 +76,14 @@ const SignUp = () => {
     if (state?.signup?.data?.statusCode == 201) {
       alert(state?.signup?.data?.message);
       navigate("/accountverify");
-    } 
-    
+    }
   }, [state.signup]);
 
-  useEffect(() => {
-    if (error?.data?.statusCode == 400) {
-      alert(error?.data?.message);
-    }
-  }, [error?.data]);
+  // useEffect(() => {
+  //   if (error?.data?.statusCode == 400) {
+  //     alert(error?.data?.message);
+  //   }
+  // }, [error?.data]);
 
   return (
     <div className="signUpmainDiv">
@@ -68,9 +91,9 @@ const SignUp = () => {
         <div className="sign-up-form">
           {/* <img src="" className="signUpimg" alt="img" /> */}
           <h1>Sign Up Now</h1>
-          <form action="">
+          <form onSubmit={signUpFun}>
             <input
-              value={body.firstName}
+              value={body?.firstName}
               type="text"
               placeholder="First name"
               className="input-box"
@@ -81,7 +104,7 @@ const SignUp = () => {
               }
             />
             <input
-              value={body.lastName}
+              value={body?.lastName}
               type="text"
               placeholder="Surname"
               className="input-box"
@@ -92,7 +115,7 @@ const SignUp = () => {
               }
             />
             <input
-              value={body.email}
+              value={body?.email}
               type="email"
               placeholder="Email"
               className="input-box"
@@ -103,7 +126,7 @@ const SignUp = () => {
               }
             />
             <input
-              value={body.password}
+              value={body?.password}
               type="password"
               placeholder="Password"
               className="input-box"
@@ -114,7 +137,7 @@ const SignUp = () => {
               }
             />
             <input
-              value={body.cnic}
+              value={body?.cnic}
               type="text"
               placeholder="Cnic"
               maxLength={13}
@@ -123,7 +146,7 @@ const SignUp = () => {
               onChange={(text) => setBody({ ...body, cnic: text.target.value })}
             />
             <input
-            value={body.phone}
+              value={body?.phone}
               type="text"
               placeholder="Phone"
               className="input-box"
@@ -135,7 +158,7 @@ const SignUp = () => {
               id=""
             />
             <input
-            value={body.whatsapp_no}
+              value={body?.whatsapp_no}
               type="text"
               placeholder="Whatsapp"
               maxLength={13}
@@ -147,7 +170,7 @@ const SignUp = () => {
               id=""
             />
             <input
-            value={body.dob}
+              value={body?.dob}
               type="date"
               placeholder="Date of birth?"
               className="input-box"
@@ -190,7 +213,7 @@ const SignUp = () => {
               </span>{" "}
               I agree to the terms of services
             </p>
-            <button type="button" onClick={signUpFun} className="signup-btn">
+            <button type="submit" className="signup-btn">
               Sign Up
             </button>
             <hr className="hr" />
@@ -200,7 +223,7 @@ const SignUp = () => {
             </button>
             <p>
               Do you have an account ?{" "}
-              <Link to='/login' className="a" href="#">
+              <Link to="/" className="a">
                 Sign in
               </Link>{" "}
             </p>

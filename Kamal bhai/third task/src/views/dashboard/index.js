@@ -33,7 +33,7 @@ const SiteBar = () => {
     if (key == "signout") {
       //TODO, sign out feature here
       localStorage.clear();
-      navigate("/login");
+      navigate("/");
       store.dispatch({ type: "SIGNIN", payload: null });
     } else {
       navigate(key);

@@ -18,7 +18,7 @@ export const signUpAction = (data, onSuccess, onFailure) => {
       .post(`https://backend.squarepro.net/${SIGNUP_URL}`, data)
       .then((res) => {
         dispatch({ type: SIGNUP, payload: res });
-        onSuccess(res.data.message);
+        onSuccess(res);
       })
       .catch((err) => {
         onFailure(err.response);
@@ -44,12 +44,13 @@ export const logInAction = (data, onSuccess, onFailure) => {
     axios
       .post(`https://backend.squarepro.net/${SIGNIN_URL}`, data)
       .then((res) => {
-        dispatch({ type: SIGNIN, payload: res?.data?.data?.token });
+        dispatch({ type: SIGNIN, payload: res?.data });
+        // dispatch({ type: SIGNIN, payload: res?.data?.data?.token });
+        onSuccess(res);
         localStorage.setItem("token", res?.data?.data?.token);
-        onSuccess(res.response);
       })
       .catch((err) => {
-        onFailure(err.response);
+        onFailure(err.response.data);
         // onFailure(err.response);
       });
 };
