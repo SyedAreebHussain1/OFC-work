@@ -1,0 +1,139 @@
+    @media only screen and (max-width: 600px) {
+    .bg-pic{
+        /* margin-top: 90px; */
+        /* background-image: url('../img/back.png'); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 330px 510px;
+        
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 600px) {
+    .bg-pic{
+        /* margin-top: 90px; */
+        /* background-image: url('../img/back.png'); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 380px 510px;
+      
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 480px) {
+    .bg-pic{
+        /* margin-top: 90px; */
+        /* background-image: url('../img/back.png'); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 510px 510px;
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 768px) {
+    .bg-pic{
+        /* margin-top: 90px; */
+        /* background-image: url('../img/back.png'); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 390px 510px;
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 992px) {
+    .bg-pic{
+        /* margin-top: 90px; */
+        /* background-image: url('../img/back.png'); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 370px 560px;
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .bg-pic{
+        /* margin-top: 90px; */
+        /* background-image: url('../img/back.png'); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: cover;
+         /* objectFt: cover; */
+    }
+}
+
+
+
+
+/* only for forget page  */
+@media only screen and (max-width: 600px) {
+    .bg-pic-forget{
+        /* margin-top: 90px; */
+        background-image: url('../img/back.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 330px 450px;
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 600px) {
+    .bg-pic-forget{
+        /* margin-top: 90px; */
+        background-image: url('../img/back.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 380px 450px;
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 480px) {
+    .bg-pic-forget{
+        /* margin-top: 90px; */
+        background-image: url('../img/back.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 510px 450px;
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 768px) {
+    .bg-pic-forget{
+        /* margin-top: 90px; */
+        background-image: url('../img/back.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 390px 450px;
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 992px) {
+    .bg-pic-forget{
+        /* margin-top: 90px; */
+        background-image: url('../img/back.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 370px 450px;
+         /* objectFt: cover; */
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .bg-pic-forget{
+        /* margin-top: 90px; */
+        background-image: url('../img/back.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+         background-size: 450px 450px;
+         /* objectFt: cover; */
+    }
+}

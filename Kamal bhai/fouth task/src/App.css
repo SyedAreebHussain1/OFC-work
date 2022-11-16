@@ -71,10 +71,10 @@ p {
 
 .banner .content p {
   font-size: 1em;
-  color: rgb(133, 128, 128);
+  color: rgb(142, 134, 134);
 }
 .btn {
-  font-size: 1em;
+  /* font-size: 1em; */
   color: #fff;
   background: #ff0157;
   display: inline-block;
@@ -86,7 +86,7 @@ p {
   transition: 0.5s;
 }
 .btn:hover {
-  letter-spacing: 4px;
+  /* letter-spacing: 1px; */
 }
 
 header {
@@ -163,14 +163,14 @@ section {
   font-weight: 300;
 }
 .titleText span {
-  color: #0a090a;
+  color: #cf0707;
   font-weight: bold;
   font-size: 1em;
 }
 .row .col05 .imgBx {
   position: relative;
   width: 100%;
-  /* min-height: 300px; */
+  min-height: 300px;
   height: 100%;
 }
 
@@ -262,7 +262,7 @@ section {
 
 .expert .content .box .text h3 {
   font-weight: 400;
-  color: #111;
+  color: rgb(169, 38, 38);
 }
 
 .testimonials {
@@ -271,7 +271,7 @@ section {
 }
 .white .titleText,
 .white p {
-  color: rgb(0, 0, 0);
+  color: rgb(210, 95, 95);
 }
 .ulli {
   font-size: 50%;
@@ -382,9 +382,11 @@ section {
 }
 
 .copyrighText {
-  padding: 8px 40px;
+  padding: 4px 10px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   /* text-align: center; */
+  display: flex;
+  justify-content: space-between;
 }
 
 .copyrighText p {

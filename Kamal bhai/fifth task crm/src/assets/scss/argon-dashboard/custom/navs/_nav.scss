@@ -1,0 +1,58 @@
+//
+// Nav
+//
+
+
+// Nav wrapper (container)
+
+// Nav wrapper
+.nav-wrapper {
+    padding: 1rem 0;
+    @include border-top-radius($card-border-radius);
+
+    + .card {
+        @include border-top-radius(0);
+        @include border-bottom-radius($card-border-radius);
+    }
+}
+
+
+// Nav links
+
+.nav-link {
+    color: $nav-link-color;
+
+    &:hover {
+        color: $nav-link-hover-color;
+    }
+
+    i.ni {
+        position: relative;
+        top: 2px;
+    }
+}
+
+@media (min-width: 992px){
+  .nav-item.active-pro {
+      position: absolute;
+      width: 100%;
+      bottom: 10px;
+      background:  $table-head-bg;
+  }
+}
+
+
+// scroll down custom changes
+::-webkit-scrollbar{
+  width:11px;
+  border-radius: 6px;
+  background-color: rgb(105, 105, 105);
+}
+::-webkit-scrollbar-thumb:hover{
+  border-radius: 6px;
+  background-color: rgb(73, 73, 73);
+}
+// ::-webkit-scrollbar-track:hover{
+//   border-radius: 6px;
+//   background-color: #e7e7e7;
+// }

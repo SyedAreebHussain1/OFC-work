@@ -1,0 +1,469 @@
+// const printDocument=()=>{
+  //   const a='Shahab';
+  //   const inputData = ['1', '2', '3'];
+  //   var doc = new jsPDF('p', 'mm', [2000, 1350]);
+  //   doc.html=''(
+  //     '',
+  //     {
+  //     callback:function(pdf){
+  //       pdf.setTextColor('Black')
+  //       pdf.text('Personal Information:',50,230)
+  //     pdf.text('Name:',50,310)
+  //     pdf.text(body.user_name,140,310)
+  //     pdf.text('Fathers /Spouse Name:',390,310)
+  //     pdf.text(body.Father,680,310)
+  //     pdf.text('Email:',870,310)
+  //     pdf.text(body.user_email,970,310)
+  //     pdf.text('Mobile:',50,410)
+  //     pdf.text(body.user_phone,160,410)
+  //     pdf.text('CNIC:',390,410)
+  //     pdf.text(body.cnic,480,410)
+  //     pdf.text('Passport No:',870,410)
+  //     pdf.text(body.PassportNo,1040,410)
+  //     pdf.text('Address (Residence):',50,710)
+  //     pdf.text(body.AddressResidence,320,710)
+  //     pdf.text('Address (Office):',50,810)
+  //     pdf.text(body.Addressoffice,320,810)
+  //     pdf.text('Profession:',50,510)
+  //     pdf.text(body.Profession,190,510)
+  //     pdf.text('Organization:',390,510)
+  //     pdf.text(body.Organization,570,510)
+  //     pdf.text('Tel (Office):',870,510)
+  //     pdf.text(body.Teloffice,1050,510)
+  //     pdf.text('Tel (Res):',50,610)
+  //     pdf.text(body.TelResidence,180,610)
+  //     pdf.text('Date of Birth:',390,610)
+  //     pdf.text(body.Dateofbirth,560,610)
+  //     pdf.text('Nationality:',870,610)
+  //     pdf.text(body.Nationality,1020,610)
+  //     pdf.text('Nominee Information:',50,930)
+  //     pdf.text('Name:',50,1010)
+  //     pdf.text(body2.Name,140,1010)
+  //     pdf.text('Relation with Applicant:',390,1010)
+  //     pdf.text(body2.Relation,690,1010)
+  //     pdf.text('CNIC:',900,1010)
+  //     pdf.text(body2.nomineecnic,990,1010)
+  //     pdf.text('Passport No::',50,1110)
+  //     pdf.text(body2.Passport_no,220,1110)
+  //     pdf.text('Telephone:',400,1110)
+  //     pdf.text(body2.Telephone,560,1110)
+  //     pdf.text('Plot Details:',50,1230)
+  //     pdf.text('Project Name:',50,1310)
+  //     pdf.text(location.state.Plot.Project_name,230,1310)
+  //     pdf.text('Sector Name:',430,1310)
+  //     pdf.text(location.state.Plot.Sector_Name,630,1310)
+  //     pdf.text('Street Name:',900,1310)
+  //     pdf.text(location.state.Plot.Streename,1080,1310)
+  //     pdf.text('Plot No:',50,1410)
+  //     pdf.text(location.state.Plot.Plot_no,230,1410)
+  //     pdf.text('Plot Type:',430,1410)
+  //     pdf.text(location.state.Plot.PlotType_Name,630,1410)
+  //     pdf.text('Plot Category:',900,1410)
+  //     pdf.text(location.state.Plot.CategoryName,1080,1410)
+  //     pdf.text('Plot Direction:',50,1510)
+  //     pdf.text(location.state.Plot.DirectionName,230,1510)
+  //     pdf.text('Plot Status:',430,1510)
+  //     pdf.text(location.state.Plot.House_Status,630,1510)
+  //     pdf.text('Plot Position:',900,1510)
+  //     pdf.text(location.state.Plot.PositionName,1080,1510)
+  //       pdf.save("my.pdf");
+
+  //     }
+  //   });
+  // }
+  // // useEffect(() => {
+  // //   props.GetData(body,onSuccess,OnFailure)
+  // // })
+
+
+   // const Addd = () => {
+  //   props.showAgent(body, onSuccess, OnFailure);
+  //   props.GetUser(body2, onSuccess, OnFailure);
+
+ 
+  // };
+
+
+
+
+
+
+
+
+
+
+            {/* 
+
+             PAYMENT DETAILS TABLE (********DONOT REMOVE**********************)
+
+
+            <Card style={{ margin: '10px' }} className="shadow">
+              <CardHeader className="border-0">
+                <h3 className="mb-0"> Payment Details (For Office Use Only) </h3>
+                <CardBody>
+                  <form>
+                    <div className="pl-lg-4">
+                      <Row>
+                      
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                            Cheque Demand Draft/Pay Order No.
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                            Dated
+                          </label>
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+                        </Col>
+
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                            Currency
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                           Amount
+                          </label>
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+                        </Col>
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                           Drawn on
+                          </label>
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+                        </Col>
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                            Bank
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                            Booking Date
+                          </label>
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+                        </Col>
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                          Booking Price
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                           Plot Price
+                          </label>
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+                        </Col>
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                          Total Installments
+                          </label>
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+                        </Col>
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                           First installment due on
+                                                     </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                           Last installment due on
+                          </label>
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+                        </Col>
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                           Form Received by
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                            On dt
+                          </label>
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+                        </Col>
+
+                        <Col lg="4" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                          Signature and Stamp
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+                        <Col lg="6" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                            Referred by
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+                        <Col lg="6" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                          Number
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+                        <Col lg="12" md="6" sm="6">
+                          <label
+                            className="form-control-label"
+                            for="input-username"
+                          >
+                          Remarks
+                          </label>
+
+                          <input
+                            type="text"
+                            id="input-username"
+                            className="form-control"
+                            placeholder=""
+                            
+                          ></input>
+                          
+
+                        </Col>
+
+
+                      </Row>
+                    </div>
+                  </form>
+                </CardBody>
+              </CardHeader>
+            </Card>
+
+
+ */}
+
+
+
+
+
+
+
+
+
+
+
+ // if(body !== null){
+
+  //   setError({
+  //     ...error,
+  //     CNICError: validate("CNIC", body.cnic),
+
+  //     Nnameerror: validate("firstName", body2.Name),
+  //     lastError: validate("lastName", body.Father),
+  //     AddRError: validate("city", body.AddressResidence),
+  //     emailError: validate("email", body.user_email),
+  //     AddOError: validate("country", body.Addressoffice),
+  //     DError: validate("DOB", body.Dateofbirth),
+  //     RError: validate("AccountNumberRequired", body2.Relation),
+  //     KError: validate("PayOrderNumberRequired", body2.nomineecnic),
+  //     fullNameError: validate("fullName", body.user_name),
+  //     ContactNumberError: validate("ContactNumber", body.Teloffice),
+  //     phoneNumberError: validate("phoneNumber", body.user_phone),
+  //     NationError: validate("BankNameRequired", body.Nationality),
+  //     OError: validate("AccountNameRequired", body.Organization),
+  //     ProError: validate("required", body.Profession),
+
+
+  //   });
+  // }

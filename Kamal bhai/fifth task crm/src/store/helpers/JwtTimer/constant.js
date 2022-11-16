@@ -1,0 +1,4 @@
+export const VERIFY_LOGIN_JWT = "VERIFY_LOGIN_JWT";
+export const VERIFY_LOGIN_JWT_SUCCESS = "VERIFY_LOGIN_JWT_SUCCESS";
+export const VERIFY_LOGIN_JWT_FAILURE = "VERIFY_LOGIN_JWT_FAILURE";
+export const VERIFY_LOGIN_JWT_PATH = "Dashboarduserloginveryfy";

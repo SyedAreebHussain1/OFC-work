@@ -4,24 +4,97 @@ import Form from "react-bootstrap/Form";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 // import FontAwesomeIcon from "@fortawesome";
 import CheckCircleOutlineTwoToneIcon from "@mui/icons-material/CheckCircleOutlineTwoTone";
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import Button from "react-bootstrap/Button";
+import LocationSearchingIcon from "@mui/icons-material/LocationSearching";
+import Footer from "../Footer";
+import React, { useEffect, useState } from "react";
+import { Link } from "@mui/material";
+
 const Section = () => {
+  const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (loading) {
+      let _list = [];
+      for (let i = 0; i < 21; i++) {
+        // _list.push(<AdItem placeholder={true} />);
+      }
+      setList(_list);
+    }
+  }, list);
   return (
     <div>
       <section className="banner" id="banner">
         <div className="content">
           <h2> Bringing Restaurants To You...</h2>
           {/* <p> */}
-          <InputGroup className="mb-3">
-            <Form.Control
-              placeholder="Enter Delivery Address"
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
-            />
-            <InputGroup.Text id="basic-addon2">
-              FIND RESTAURANTS
-            </InputGroup.Text>
-          </InputGroup>
+          <div style={{ display: "flex", background: "#fff" }}>
+            <div
+              style={{
+                width: "70%",
+                height: "50px",
+                border: "1px solid black",
+                margin: "12px",
+                borderRadius: "5px",
+                display: "flex",
+                margin: "12px 12px 12px 12px",
+              }}
+            >
+              <InputGroup
+                style={{
+                  boxShadow: "none",
+                  margin: "5px",
+                  border: "none",
+                  outline: 0,
+                  background: "transparent",
+                  // borderBottom: "3px solid white",
+                  borderRadius: "5px",
+                }}
+                className="mb-3"
+                size="md"
+              >
+                <Form.Control
+                  style={{
+                    boxShadow: "none",
+                    // margin:'12px',
+                    border: "none",
+                    outline: 0,
+                    // background: "transparent",
+                    // borderBottom: "3px solid white",
+                    // borderRadius: "5px",
+                  }}
+                  placeholder="Enter Delivery Address"
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                />
+              </InputGroup>
+              <div style={{ margin: "9px 8px" }}>
+                <LocationSearchingIcon />
+              </div>
+            </div>
+            <div
+              // style={{margin:'20px 0px'}}
+              style={{
+                width: "55%",
+                // border: "1px solid black",
+                // margin: "12px 22px",
+                // borderRadius: "5px",
+              }}
+            >
+              <Button
+                // size="sm"
+                style={
+                  {
+                    // marginLeft: "2%",
+                  }
+                }
+                variant="danger"
+              >
+                Find RESTAURANTS
+              </Button>
+            </div>
+          </div>
           {/* <a href="#" className=""="btn">
             Our Menu
           </a> */}
@@ -30,9 +103,9 @@ const Section = () => {
 
       <section className="menu" id="menu">
         <div className="title">
-          <h2 className="titleText">
+          <h3 className="titleText">
             Featured <span>Restaurants</span>
-          </h2>
+          </h3>
           {/* <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p> */}
         </div>
         <div className="content">
@@ -188,7 +261,7 @@ const Section = () => {
               />
             </div>
             <div className="text">
-              <h3>Mc Donalds</h3>
+              <h3>Mc Donald's</h3>
               <p>Asian</p>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div>
@@ -260,62 +333,240 @@ const Section = () => {
         </div> */}
       </section>
       <section class="testimonials" id="testimonials">
-        <div className="imgulli" style={{ display: "flex", justifyContent: "space-between" }}>
-          <div >
+        <div
+          className="imgulli"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <div>
             {" "}
             <img
-              style={{ width: "90%" }}
-              src="https://st.hzcdn.com/simgs/pictures/kitchens/beach-cottage-transformation-custom-cabinetry-creates-light-and-airy-kitchen-urbana-design-studio-img~c4c1a6ce0e81569a_14-4122-1-d16a4ac.jpg"
+              style={{ width: "100%" }}
+              src="https://quickdeliveryslu.com/themes/default/assets/images/bbq1.jpg"
               alt="img"
             />{" "}
           </div>
-          <div class="title white">
-            <p class="titleText">
-              <p>
-                {" "}
-                <span>Convience on your terms</span>{" "}
-              </p>
-              <ul className="ulli">
-                <li>
-                  Spend more time doing the things that matter to you---we will
-                  take care of the rest
-                </li>
-                <li>
-                  Browse hundreds of menus, meals and restaurant options all
-                  from one app
-                </li>
-                <li>
-                  Whether you are at home, at work or an event, we will deliver
-                  to you
-                </li>
-                <li>
-                  With our highly sophisticated application you can track your
-                  order in real time from beginning to end
-                </li>
-                <li>
-                  Order your food with a few taps and get it delivered to you..
-                </li>
-                <li>
-                  Conveniently pay with your credit card or cash on delivery
-                </li>
-                <li>
-                  Round the clock customer support to answer any questions you
-                  may have
-                </li>
-              </ul>
+          <div className="col50">
+            <h2 className="titleText">
+              <span>C</span>onvience on your terms
+            </h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              at velit minim quis iusto! Molestias Lorem ipsum dolor sit amet
+              consectetur Food elit. Laborum ror est aliquam minus ea
+              perspiciatis optio repellat, vel nisi nemo. <br />
+              <Button
+                style={{
+                  marginLeft: "2%",
+                }}
+                variant="danger"
+              >
+                Order Now
+              </Button>{" "}
+              {/* Lorem ipsum dol or sit amet consectetur adipisicing elit. Magni,
+              cumque velit. Numquam perferendis nisi ut repellendus vel dolorum
+              explicabo! Doloremque deleniti dolorem et qui laboriosam itaque
+              ullam corporis suscipit accusantium. ut repellendus vel dolorum
+              explicabo! Doloremque deleniti dolorem et qui laboriosam itaque
+              ullam corporis suscipit accusantium.{" "} */}
             </p>
           </div>
         </div>
       </section>
-      <div className="copyrightTextfle" style={{}}>
-        <div class="copyrighText">
-          <p>© Copyright 2019 QuickDelivery, All rights reserved.</p>
+
+      <section className="expert" id="expert">
+        <div className="title">
+          <h2 className="titleText">
+            Restaurants Near <span>Me</span>
+          </h2>
+          {/* <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p> */}
         </div>
-        <div>
-            <FacebookOutlinedIcon/>
-            <FacebookOutlinedIcon/>
+        <div className="content">
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/2/gkfaevkiEFvfg2gzddaFXamBQjGEB4svk4yZUYkS.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/3/5pQEifsTjBs1IlSFV9YUrWbJDe9F2argi5JffUlv.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/4/FG7tILSuO7RLJM0gsGbuBdKKSct1NESdsxfJPKLS.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/6/Pdn1H50jsHJ8VUkBhbsNXkmP3ttErtnja7KaUETb.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
         </div>
-      </div>
+        <div className="content">
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/5/zpBQZgm0Y4hg9aJB3kPLT0BIf1NBauTJmLMJt2y2.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/10/Aymqb4AlO9d7LBZXAN29zafkP9dXwGFbgeLb3B9o.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/14/Ib2uq8Os3FvIo7fvHGxvUA1ZtVTpCk1AQvnhL5g7.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/20/q73d1MLl5auI7vwP3IXdpHzMLK66QD0bN5qrSnuW.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+        </div>
+        <div className="content">
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/17/7A1WQIAA9L3ZFtwi6aGvQL23dbeXA0C1d8Xb9ww5.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/25/wpSYcZlSPBlU2gkE5uzYeKXtpjhIvzXGxaVwyLt4.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/8/IdRFQmaepzVYJkaln739PkNB93pTOJ2rCPZrpRvk.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/21/As87uYaDdI3tFkqeWg1NM12vYAyOsmmXForJQ2Pv.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+        </div>
+        <div className="content">
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/19/XoOZNydOrheQ7AgjRddpboVcXeUcCDBLX8J5Op8e.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/15/8uK9KyQEyQ2YfdOLTJeenlUlqSeA3RaX6PCc6sbd.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/10/Aymqb4AlO9d7LBZXAN29zafkP9dXwGFbgeLb3B9o.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+          <div className="box">
+            <div className="imgBx">
+              <img
+                src="https://quickdeliveryslu.com/storage/seller_type/12/Reo7D3YnawmNIDom2BqpNjahCj3OmYt6OuABFIza.jpeg"
+                alt=""
+              />
+            </div>
+            <div className="text">
+              {/* <h3> Someone Famous</h3> */}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };

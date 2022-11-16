@@ -1,0 +1,29 @@
+export const AGENT = "AGENT";
+export const AGENT_SUCCESS = "AGENT_SUCCESS";
+export const AGENT_FAILURE = "AGENT_FAILURE";
+export const AGENT_PATH = "showallDashboarduser";
+
+
+export const SAVE_AGENT="SAVE_AGENT";
+export const SAVE_AGENT_SUCCESS= "SAVE_AGENT_SUCCESS";
+export const SAVE_AGENT_FAILURE= "SAVE_AGENT_FAILURE";
+export const SAVE_AGENT_PATH= "insertnewDashboarduser";
+
+export const SAVE_TEAM="SAVE_TEAM";
+export const SAVE_TEAM_SUCCESS= "SAVE_TEAM_SUCCESS";
+export const SAVE_TEAM_FAILURE= "SAVE_TEAM_FAILURE";
+export const SAVE_TEAM_PATH= "AddNewTeam";
+
+
+export const UPDATEEMPLOYEE="UPDATEEMPLOYEE";
+export const UPDATEEMPLOYEE_SUCCESS= "UPDATEEMPLOYEE_SUCCESS";
+export const UPDATEEMPLOYEE_FAILURE= "UPDATEEMPLOYEE_FAILURE";
+export const UPDATEEMPLOYEE_PATH= "UpdateProfile";
+
+
+export const DELETEEMPLOYEE="DELETEEMPLOYEE";
+export const DELETEEMPLOYEE_SUCCESS= "DELETEEMPLOYEE_SUCCESS";
+export const DELETEEMPLOYEE_FAILURE= "DELETEEMPLOYEE_FAILURE";
+export const DELETEEMPLOYEE_PATH= "RemoveDashboardUser";
+
+

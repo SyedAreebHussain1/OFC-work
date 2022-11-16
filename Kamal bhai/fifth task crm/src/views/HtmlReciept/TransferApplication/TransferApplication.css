@@ -1,0 +1,310 @@
+.body12 {
+  width: 1200px;
+  height: 100%;
+  margin: 0px;
+  padding: 20px 60px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  color: rgb(33, 33, 33);
+  /* border: 1px solid black; */
+  /* background: rgba(255, 255, 255, 0.5) url("https://di7b0povdn4ov.cloudfront.net/staticcontent/FINALLOGOBLACK.png") no-repeat 0 50%; */
+}
+
+.headind4 {
+  color: green;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  padding: 2px;
+}
+
+.declarationsHeading {
+  margin-top: 150px;
+  border: 1px solid black;
+  padding: 2px;
+  /* padding-top: 40px; */
+  color: green;
+  margin-bottom: 20px;
+}
+
+input {
+  font-size: 16px;
+}
+
+.dflex {
+  display: flex;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex2 {
+  flex: 2;
+}
+
+.flex3 {
+  flex: 3;
+}
+
+.flex4 {
+  flex: 4;
+}
+
+.flex5 {
+  flex: 5;
+}
+
+.flex7 {
+  flex: 7;
+}
+
+.flex8 {
+  flex: 8;
+}
+
+.flex10 {
+  flex: 10;
+}
+
+.mt20 {
+  margin-top: -20px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.ml5 {
+  margin-left: 5px;
+}
+
+.mt23 {
+  margin-top: 0px;
+}
+
+.ml3 {
+  margin-left: 3px;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.ml17 {
+  margin-left: 17px;
+}
+
+.ml30 {
+  margin-left: 30px;
+}
+
+.mt0 {
+  margin-top: 0px;
+}
+
+.mb0 {
+  margin-bottom: 0px;
+}
+
+.f-s-small {
+  font-size: small;
+}
+
+.text_al_center {
+  text-align: center;
+}
+
+.text_al_justify {
+  text-align: justify;
+}
+
+.bgcolor-gray {
+  background-color: gray;
+}
+
+.mainHeading {
+  text-align: center;
+}
+
+.mainHeading .logo {
+  /* position: absolute; */
+  top: 0px;
+  bottom: 0px;
+  left: -10px;
+  width: 350px;
+}
+
+.mainHeading h1 {
+  display: inline;
+  color: rgb(166, 127, 45);
+}
+
+.regForm-header {
+  margin-top: -40px;
+  color: green;
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.regForm-header .app_req {
+  margin-top: 50px;
+  margin-left: 160px;
+  /* margin-left: -50px; */
+  flex: 9;
+}
+
+.regForm-header .img_text {
+  width: 100%;
+  height: 150px;
+  font-size: small;
+  color: darkblue;
+}
+
+.nominee_information_img_text {
+  width: 100%;
+  height: 190px;
+  font-size: small;
+  text-align: center;
+  margin-top: auto;
+  color: darkblue;
+}
+
+.Verification_of_information_text {
+  font-size: 14px;
+  line-height: 0;
+  word-spacing: -1px;
+}
+
+.note {
+  font-size: 12px;
+  line-height: 0;
+  margin-top: -10px;
+}
+
+.terms_conditions {
+  font-size: 14px;
+  line-height: 0;
+  color: green;
+}
+
+.terms_conditions_points {
+  font-size: 14px;
+  line-height: 0;
+  word-spacing: -1px;
+}
+
+.sub_header {
+  font-size: small;
+  line-height: normal;
+  color: darkblue;
+}
+
+.regForm-body .section_one {
+  border: 1px solid black;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.cnic_col {
+  border: 1px solid black !important;
+  width: 15px !important;
+  height: 20px !important;
+  display: inline-block !important;
+  margin-right: 0px !important;
+  margin-bottom: -5px !important;
+  text-align: center !important;
+}
+
+.cnic_last_col {
+  border: 1px solid black;
+  width: 15px;
+  height: 20px;
+  display: inline-block;
+  margin-bottom: -5px;
+}
+
+.flex_margin {
+  display: flex;
+  margin-bottom: 8.2px;
+}
+
+.flex_margin-10 {
+  display: flex;
+  margin-bottom: -10px;
+}
+
+.declarations_text {
+  display: flex;
+  margin-top: -12px;
+  margin-bottom: 5px;
+  line-height: normal;
+  font-size: 14px;
+}
+
+.declarations_boxes {
+  width: 100%;
+  height: "auto";
+}
+
+.d_Blk {
+  display: block;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.marginBottom {
+  margin-bottom: -5px;
+}
+
+.inputBorder {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px soild black;
+  outline: none;
+  background: transparent;
+  width: 100%;
+}
+
+.photograph {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.photograph h4 {
+  color: white;
+  background-color: rgb(166, 127, 45);
+  display: inline;
+  padding: 2px 8px;
+}
+
+/* @media print and (width: 8.5in) and (height: 14in) {
+    .body12 {
+      width: 1000px;
+      height: 100%;
+      margin: 0px;
+      padding: 20px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 24px;
+      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      color: rgb(33, 33, 33);
+    }
+  
+    .declarationsHeading {
+      margin-top: 20px;
+      padding: 2px;
+      padding-top: 2px;
+      color: green;
+      margin-bottom: 20px;
+    }
+  } */
+
+@page {
+  size: 8.5in 14in;
+}

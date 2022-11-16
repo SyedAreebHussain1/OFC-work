@@ -1,0 +1,19 @@
+//
+// Card
+//
+
+
+.card-translucent {
+    background-color: rgba(18, 91, 152, 0.08);
+}
+card{
+    background-image:url("../../../../img/back.png"); 
+    // backgroundPosition: 'center',
+    // // backgroundAttachment: 'fixed',
+    //  backgroundRepeat: 'no-repeat',
+    //   backgroundSize: 'cover',
+    //   objectFit: 'cover';
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}

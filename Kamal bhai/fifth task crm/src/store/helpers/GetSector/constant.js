@@ -1,0 +1,5 @@
+export const PLOTSECTOR= "PLOTSECTOR";
+export const PLOTSECTOR_SUCCESS = "PLOTSECTOR_SUCCESS";
+export const PLOTSECTOR_FAILURE = "PLOTSECTOR_FAILURE";
+export const PLOTSECTOR_PATH = "Sectors";
+
