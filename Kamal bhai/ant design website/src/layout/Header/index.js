@@ -8,11 +8,11 @@ const AppHeader = () => (
             <div className='header'>
                 <div className="logo" >
                     <i className='fas fa-bolt'></i>
-                    <a href='https://www.google.com/'></a>
+                    <a style={{ textDecoration: 'none' }} href='https://www.google.com/'>Tech</a>
                 </div>
                 <Menu
                     mode="horizontal"
-                    defaultSelectedKeys={['2']}
+                    defaultSelectedKeys={['1']}
                     items={[
                         { label: "Home", key: "1" },
                         { label: "About", key: "2" },

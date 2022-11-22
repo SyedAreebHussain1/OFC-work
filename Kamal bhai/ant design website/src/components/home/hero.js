@@ -2,22 +2,21 @@ import React from "react";
 import { Carousel, Button, Space } from 'antd';
 
 
-
 const items = [
     {
         key: '1',
-        title: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.',
-        content: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue'
+        title: 'At vero eos et accusamus ducimus qui blanditiis.',
+        content: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized.'
     },
     {
         key: '2',
-        title: 'But I must explain to you how all this mistaken idea.',
-        content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+        title: 'But I must explain to you how all this idea.',
+        content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.'
     },
     {
         key: '3',
-        title: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.',
-        content: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire'
+        title: 'Contrary to popular belief, Lorem Ipsum is text.',
+        content: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.'
     }
 ]
 
