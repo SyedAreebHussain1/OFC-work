@@ -11584,7 +11584,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   width: 0%;
   height: 4px;
   /* background-color: var(--ltn__secondary-color); */
+  /*  */
   background-color: #27a3a3;
+  /*  */
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
@@ -18073,10 +18075,12 @@ input.cart-plus-minus-box {
   background-color: #27a3a3;
   color: var(--white);
   border-radius: 40px;
+  border: none;
 }
 .theme-btn-1:hover {
   background-color: var(--ltn__primary-color);
   color: var(--white);
+  border: none;
 }
 .theme-btn-Home {
   /* background-color: var(--ltn__secondary-color); */

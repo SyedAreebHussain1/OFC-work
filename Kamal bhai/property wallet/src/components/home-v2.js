@@ -16,12 +16,16 @@ import CallToActionV1 from "./section-components/call-to-action-v1";
 import Footer from "./global-components/footer";
 import DownloadApp from "./section-components/download-app";
 import Main from "./carousel/Main";
+import VideoV1 from "./section-components/video-v1";
+import VideoBanner from "./V2/VideoBanner";
 
 const Home_V2 = () => {
   return (
     <div>
       <Navbar />
-      <Banner />
+      {/* <VideoV1 /> */}
+      <VideoBanner />
+      {/* <Banner /> */}
       {/* <Main /> */}
       {/* <Aboutv3 /> */}
       {/* <Video /> */}
@@ -37,6 +41,7 @@ const Home_V2 = () => {
       {/* <Testimonial /> */}
       {/* <BlogSlider /> */}
       {/* <CallToActionV1 /> */}
+
       <Footer />
     </div>
   );

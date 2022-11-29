@@ -1,0 +1,60 @@
+.mainContainer_areeb {
+    display: flex !important;
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+.managementDiv {
+    /* border: 1px solid black; */
+    /* text-align: center; */
+    /* background-color: green; */
+    width: 35%;
+    margin-top: 2px;
+
+    /* padding: 10px; */
+}
+
+/* managementLogoP */
+.pTag {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2e8894 !important;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.iconpng {
+    margin-top: 5px;
+    /* margin: 5px; */
+    width: 37px;
+    height: 35px;
+    /* padding-top: 0px; */
+}
+
+
+.imgIphone {
+    width: 40% !important
+}
+
+.imgDiv {
+    width: 100%;
+    text-align: center;
+}
+
+.managementLogoP {
+    display: flex;
+    /* background-color: #060c09; */
+    text-align: start;
+    padding-top: 10px;
+}
+
+.managementLogoP:hover {
+    /* color: rgb(1, 110, 110) !important; */
+    transition: 0.3s;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    /* box-shadow: 10px 1px */
+    box-shadow: 1px 1px 1px 1px rgb(204, 209, 211);
+}
+
+/* @media only screen and (max-width: 991px) {} */

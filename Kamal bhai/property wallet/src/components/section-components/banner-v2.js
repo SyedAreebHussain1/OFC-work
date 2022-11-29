@@ -9,7 +9,7 @@ class BannerV2 extends Component {
     let imagealt = "image";
 
     return (
-        <div className="ltn__slider-area ltn__slider-11  ltn__slider-11-slide-item-count-show--- ltn__slider-11-pagination-count-show--- section-bg-1">
+      <div className="ltn__slider-area ltn__slider-11  ltn__slider-11-slide-item-count-show--- ltn__slider-11-pagination-count-show--- section-bg-1">
         <div className="ltn__slider-11-inner">
           <div className="ltn__slider-11-active">
             {/* slide-item */}
@@ -57,15 +57,15 @@ class BannerV2 extends Component {
                             </span>
                             <br /> Anytime, Anywhere
                           </h1>
-                        
-                             <div className="slide-brief animated">
+
+                          <div className="slide-brief animated">
                             <p>
                               Lorem ipsum dolor sit amet, consectetur
                               adipisicing elit, sed do eiusmod tempor incididunt
                               ut labore.
                             </p>
-                          </div> 
-                          
+                          </div>
+
                           <div className="btn-wrapper animated">
                             <Link to="#" className="theme-btn-Home btn">
                               Watch tutorial
@@ -85,7 +85,7 @@ class BannerV2 extends Component {
                         </div>
                       </div>
                       <div className="slide-item-img">
-                        <img src={bannerImg} alt="#" /> 
+                        <img src={bannerImg} alt="#" />
                       </div>
                     </div>
                   </div>
@@ -336,8 +336,8 @@ class BannerV2 extends Component {
               </div>
             </div>
           </div> */}
-          </div>
         </div>
+      </div>
     );
   }
 }
@@ -346,14 +346,3 @@ export default BannerV2;
 
 
 
-
- {/* <div style={{ */}
-          {/* margin: 0, */}
-          {/* padding: 0, */}
-          {/* boxSizing: 'border-box', */}
-          {/* scrollBehavior: 'smooth', */}
-        {/* }}> */}
-          {/* <video style={{ width: '100%' }} className='videoTag' autoPlay loop muted> */}
-            {/* <source src={bannerVideo} type='video/mp4' /> */}
-          {/* </video> */}
-         {/* </div> */}
