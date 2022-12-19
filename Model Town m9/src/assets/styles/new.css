@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Jameel Noori Nastaleeq';
+  src: local(Jameel Noori Nastaleeq), url(../fonts/Jameel.Noori.Nastaleeq.woff) format('woff');
+}
+
+
+.urdu-font{
+  
+  font-family :'Jameel Noori nastaleeq';
+  
+}
+
+
