@@ -3,7 +3,7 @@ import { cityListAction } from "../../store/action/cityList";
 import { useDispatch, useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
 
 const CityList = () => {
   const [search, setSearch] = useState(null);
@@ -51,7 +51,7 @@ const CityList = () => {
             aria-label="Username"
             aria-describedby="basic-addon1"
           />
-          <SearchIcon style={{ cursor: "pointer" }} onClick={searchData} />
+          {/* <SearchIcon style={{ cursor: "pointer" }} onClick={searchData} /> */}
         </div>
         <br />
         <Table striped bordered hover variant="dark">
